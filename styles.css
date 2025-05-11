@@ -2181,6 +2181,70 @@ h1::after, h2::after, h3::after {
     text-decoration: underline;
 }
 
+/* Responsive Design for Service Grid and General Layout */
+@media (max-width: 900px) {
+    .service-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        padding: 0 8px;
+    }
+    .service-tile {
+        min-width: 0;
+        padding: 18px 10px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .service-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 0 4px;
+    }
+    .service-tile {
+        min-width: 0;
+        padding: 14px 6px;
+        font-size: 0.98rem;
+    }
+    .service-tile h3 {
+        font-size: 1.1rem;
+    }
+    .service-tile p {
+        font-size: 0.95rem;
+    }
+    .section {
+        padding: 32px 4px;
+    }
+    .header-container, .container {
+        padding: 0 4px;
+    }
+    .nav-bar {
+        flex-direction: column;
+        padding: 8px 0;
+    }
+    .nav-list {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .nav-link {
+        font-size: 1rem;
+        padding: 8px 0;
+    }
+    .about-card, .work-item, .work-stats-panel, .contact-info-panel, .contact-form-container {
+        padding: 12px 4px;
+        border-radius: 10px;
+    }
+    .project-image, .about-card-photo {
+        max-width: 100%;
+        height: auto;
+    }
+    .work-pdf-btn, .about-cta-btn, .submit-btn {
+        width: 100%;
+        font-size: 1rem;
+        padding: 10px 0;
+    }
+}
+
 
 
 
