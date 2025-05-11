@@ -2420,6 +2420,64 @@ h1::after, h2::after, h3::after {
   }
 }
 
+.calendly-float-btn-circle {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 3000;
+  background: #003366;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+.calendly-float-btn-circle:hover,
+.calendly-float-btn-circle:focus {
+  background: #00509e;
+  transform: translateY(-2px) scale(1.08);
+}
+.calendly-float-btn-circle::after {
+  content: attr(title);
+  position: absolute;
+  right: 70px;
+  bottom: 18px;
+  background: #003366;
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 18px;
+  font-size: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+.calendly-float-btn-circle:hover::after,
+.calendly-float-btn-circle:focus::after {
+  opacity: 1;
+}
+@media (max-width: 600px) {
+  .calendly-float-btn-circle {
+    width: 48px;
+    height: 48px;
+    font-size: 1.3rem;
+    bottom: 16px;
+    right: 16px;
+  }
+  .calendly-float-btn-circle::after {
+    right: 54px;
+    bottom: 10px;
+    font-size: 0.95rem;
+  }
+}
+
 
 
 

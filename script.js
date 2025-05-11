@@ -172,11 +172,25 @@ if (hamburgerBtn && mobileNav) {
 }
 
 // Calendly floating button popup
-const calendlyBtn = document.getElementById('calendly-float-btn');
-if (calendlyBtn) {
-  calendlyBtn.addEventListener('click', function(e) {
-    e.preventDefault();
-    Calendly.initPopupWidget({ url: 'https://calendly.com/shaheersaud2004' });
-    return false;
+(function() {
+  // Wait until Calendly widget.js is loaded
+  function onCalendlyReady(cb) {
+    if (window.Calendly && typeof window.Calendly.initPopupWidget === 'function') {
+      cb();
+    } else {
+      setTimeout(function() { onCalendlyReady(cb); }, 100);
+    }
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendlyBtn = document.getElementById('calendly-float-btn');
+    if (calendlyBtn) {
+      calendlyBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        onCalendlyReady(function() {
+          Calendly.initPopupWidget({ url: 'https://calendly.com/shaheersaud2004' });
+        });
+        return false;
+      });
+    }
   });
-}
+})();
