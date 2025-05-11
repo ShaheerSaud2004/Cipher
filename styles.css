@@ -2386,6 +2386,40 @@ h1::after, h2::after, h3::after {
     }
 }
 
+.calendly-float-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 3000;
+  background: #003366;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 16px 28px;
+  border-radius: 32px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+.calendly-float-btn:hover {
+  background: #00509e;
+  transform: translateY(-2px) scale(1.04);
+}
+.calendly-float-btn i {
+  font-size: 1.3rem;
+}
+@media (max-width: 600px) {
+  .calendly-float-btn {
+    padding: 12px 18px;
+    font-size: 1rem;
+    bottom: 16px;
+    right: 16px;
+  }
+}
+
 
 
 

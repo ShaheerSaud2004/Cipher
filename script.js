@@ -46,101 +46,55 @@ function slowScrollTo(targetY, duration) {
     requestAnimationFrame(step);
 }
 
-// Send Email with EmailJS REST API
-function sendEmail(event) {
-    event.preventDefault();
-
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
-    const formStatus = document.getElementById("form-status");
+// AJAX Formspree submission with feedback
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const formStatus = document.getElementById('form-status');
     const submitBtn = document.querySelector('.submit-btn');
     const btnText = submitBtn.querySelector('.btn-text');
     const btnIcon = submitBtn.querySelector('i');
-
-    // Clear previous status
-    formStatus.textContent = "";
-    formStatus.className = "form-status";
-
-    // Validate form fields
-    if (!name || !email || !message) {
-        formStatus.textContent = "All fields are required.";
-        formStatus.className = "form-status error";
-        return;
-    }
-
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        formStatus.textContent = "Please enter a valid email address.";
-        formStatus.className = "form-status error";
-        return;
-    }
-
-    // Show sending status
     formStatus.innerHTML = '<span class="status-icon"><i class="fas fa-spinner fa-spin"></i></span> Sending message...';
-    formStatus.className = "form-status";
+    formStatus.className = 'form-status';
     submitBtn.disabled = true;
-    btnText.textContent = "Sending...";
-    btnIcon.style.transform = "translateX(8px)";
+    btnText.textContent = 'Sending...';
+    btnIcon.style.transform = 'translateX(8px)';
 
-    // EmailJS REST API parameters
-    const emailParams = {
-        service_id: "service_vw4zcz4",
-        template_id: "template_kh1uqeb",
-        user_id: "69lsN_TkiIecjWyy-",
-        template_params: {
-            name: name,
-            email: email,
-            message: message,
-        },
-    };
-
-    // Send email using fetch
-    fetch("https://api.emailjs.com/api/v1.0/email/send", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(emailParams),
-    })
-        .then((response) => {
-            if (response.ok) {
-                formStatus.innerHTML = '<span class="status-icon"><i class="fas fa-check-circle"></i></span> Message sent successfully! We\'ll be in touch soon.';
-                formStatus.className = "form-status success";
-                document.getElementById("contact-form").reset();
-                
-                // Animate success
-                submitBtn.style.background = "#1e7e34";
-                btnText.textContent = "Sent!";
-                btnIcon.className = "fas fa-check";
-                
-                // Reset button after 3 seconds
-                setTimeout(() => {
-                    submitBtn.disabled = false;
-                    submitBtn.style.background = "#003366";
-                    btnText.textContent = "Send Message";
-                    btnIcon.className = "fas fa-paper-plane";
-                    btnIcon.style.transform = "";
-                }, 3000);
-            } else {
-                throw new Error(`Failed to send email: ${response.status}`);
-            }
-        })
-        .catch((error) => {
-            console.error("Error sending email:", error);
-            formStatus.innerHTML = '<span class="status-icon"><i class="fas fa-times-circle"></i></span> Failed to send the message. Please try again.';
-            formStatus.className = "form-status error";
-            
-            // Reset button
-            submitBtn.disabled = false;
-            btnText.textContent = "Send Message";
-            btnIcon.style.transform = "";
-        });
+    const formData = new FormData(contactForm);
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        formStatus.innerHTML = '<span class="status-icon"><i class="fas fa-check-circle"></i></span> Message sent successfully! We\'ll be in touch soon.';
+        formStatus.className = 'form-status success';
+        contactForm.reset();
+        submitBtn.style.background = '#1e7e34';
+        btnText.textContent = 'Sent!';
+        btnIcon.className = 'fas fa-check';
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtn.style.background = '#003366';
+          btnText.textContent = 'Send Message';
+          btnIcon.className = 'fas fa-paper-plane';
+          btnIcon.style.transform = '';
+          formStatus.innerHTML = '';
+        }, 3000);
+      } else {
+        throw new Error('Failed to send');
+      }
+    } catch (err) {
+      formStatus.innerHTML = '<span class="status-icon"><i class="fas fa-times-circle"></i></span> Failed to send the message. Please try again.';
+      formStatus.className = 'form-status error';
+      submitBtn.disabled = false;
+      btnText.textContent = 'Send Message';
+      btnIcon.style.transform = '';
+    }
+  });
 }
-
-// Attach the sendEmail function to the form submission event
-document.getElementById("contact-form").addEventListener("submit", sendEmail);
 
 // Ripple effect for service cards
 
@@ -214,5 +168,15 @@ if (hamburgerBtn && mobileNav) {
     link.addEventListener('click', () => {
       mobileNav.classList.remove('open');
     });
+  });
+}
+
+// Calendly floating button popup
+const calendlyBtn = document.getElementById('calendly-float-btn');
+if (calendlyBtn) {
+  calendlyBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    Calendly.initPopupWidget({ url: 'https://calendly.com/shaheersaud2004' });
+    return false;
   });
 }
