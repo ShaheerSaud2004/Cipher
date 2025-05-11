@@ -6,8 +6,8 @@
     <title>Cipher Consulting</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <script defer src="script.js"></script>
 </head>
@@ -27,10 +27,15 @@
     <header>
         <div class="header-container">
             <div class="header-logo-text">
-                <img src="Consulting_Logo.png" alt="Cipher Consulting Logo" class="logo">
+                <div class="header-logo-bg">
+                    <img src="Consulting_Logo.png" alt="Cipher Consulting Logo" class="logo">
+                </div>
                 <div class="header-text">
-                    <h1>Cipher Consulting</h1>
-                    <p>Empowering Secure Digital Growth</p>
+                    <h1 class="brand-title">
+                        <span class="brand-cipher">Cipher</span>
+                        <span class="brand-consulting">Consulting</span>
+                    </h1>
+                    <p class="brand-tagline">Automation & Digital Transformation Experts</p>
                 </div>
             </div>
             <nav class="nav-bar">
@@ -45,6 +50,60 @@
         </div>
     </header>
     
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <img src="BP (1).png" class="hero-float-img hero-float-1" alt="Tech 1" />
+        <img src="BP (2).png" class="hero-float-img hero-float-2" alt="Tech 2" />
+        <img src="BP (3).jpg" class="hero-float-img hero-float-3" alt="Tech 3" />
+        <img src="Bp.png" class="hero-float-img hero-float-4" alt="Tech 4" />
+        <img src="L.png" class="hero-float-img hero-float-5" alt="Tech 5" />
+        <img src="Colgate.jpeg" class="hero-float-img hero-float-6" alt="Tech 6" />
+        <img src="L3.jpeg" class="hero-float-img hero-float-7" alt="Tech 7" />
+        <img src="R (2).png" class="hero-float-img hero-float-8" alt="Tech 8" />
+        <img src="R (4).jpg" class="hero-float-img hero-float-9" alt="Tech 9" />
+        <img src="R (5).png" class="hero-float-img hero-float-10" alt="Tech 10" />
+        <img src="R (6).jpg" class="hero-float-img hero-float-11" alt="Tech 11" />
+        <img src="Square.png" class="hero-float-img hero-float-12" alt="Tech 12" />
+        <img src="Powershell.png" class="hero-float-img hero-float-13" alt="Powershell" />
+        <img src="Python.png" class="hero-float-img hero-float-14" alt="Python" />
+        <img src="PyCharm.png" class="hero-float-img hero-float-15" alt="PyCharm" />
+        <img src="Anaconda.png" class="hero-float-img hero-float-16" alt="Anaconda" />
+        <img src="Microsoft SQL Server.png" class="hero-float-img hero-float-17" alt="Microsoft SQL Server" />
+        <img src="Google Cloud.png" class="hero-float-img hero-float-18" alt="Google Cloud" />
+        <img src="Apple.png" class="hero-float-img hero-float-19" alt="Apple" />
+        <img src="AWS.png" class="hero-float-img hero-float-20" alt="AWS" />
+        <img src="Unreal Engine.png" class="hero-float-img hero-float-21" alt="Unreal Engine" />
+        <img src="Red Hat.png" class="hero-float-img hero-float-22" alt="Red Hat" />
+        <div class="hero-content">
+            <h1 class="hero-title">Empowering Secure Digital Growth</h1>
+            <p class="hero-subtitle">Cipher Consulting delivers expert IT solutions, cybersecurity, and automation to help your business thrive in the digital age.</p>
+            <a href="#contact" class="hero-cta">Get Started</a>
+            <div class="hero-illustration">
+                <svg class="hero-key-svg key-float" width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <radialGradient id="shield-gold" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#ffe066"/>
+                      <stop offset="100%" stop-color="#ffcc00"/>
+                    </radialGradient>
+                    <filter id="shield-shadow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#003366" flood-opacity="0.18"/>
+                    </filter>
+                  </defs>
+                  <g filter="url(#shield-shadow)">
+                    <!-- Shield shape -->
+                    <path d="M55 18C70 28 90 32 90 50C90 80 55 95 55 95C55 95 20 80 20 50C20 32 40 28 55 18Z" fill="#003366" stroke="#ffcc00" stroke-width="3"/>
+                    <!-- Lock body -->
+                    <rect x="40" y="55" width="30" height="22" rx="7" fill="url(#shield-gold)" stroke="#003366" stroke-width="2"/>
+                    <!-- Lock shackle -->
+                    <rect x="50" y="48" width="10" height="12" rx="5" fill="#fff" stroke="#003366" stroke-width="2"/>
+                    <!-- Lock keyhole -->
+                    <circle cx="55" cy="66" r="3" fill="#003366"/>
+                    <rect x="54" y="66" width="2" height="6" rx="1" fill="#003366"/>
+                  </g>
+                </svg>
+            </div>
+        </div>
+    </section>
 
     <!-- Main Content Wrapper -->
     <main>
@@ -53,23 +112,23 @@
             <div class="container">
                 <h2>Our Services</h2>
                 <div class="service-grid">
-                    <div class="service-tile">
+                    <div class="service-tile" data-aos="fade-up" data-aos-delay="0">
                         <h3>Computer Repair & Installation</h3>
                         <p>Comprehensive solutions for all your computer repair and installation needs.</p>
                     </div>
-                    <div class="service-tile">
+                    <div class="service-tile" data-aos="fade-up" data-aos-delay="100">
                         <h3>App Development</h3>
                         <p>Customized app development for seamless digital experiences.</p>
                     </div>
-                    <div class="service-tile">
+                    <div class="service-tile" data-aos="fade-up" data-aos-delay="200">
                         <h3>Web Development</h3>
                         <p>Modern, responsive websites crafted to elevate your online presence.</p>
                     </div>
-                    <div class="service-tile">
+                    <div class="service-tile" data-aos="fade-up" data-aos-delay="300">
                         <h3>Cybersecurity Consulting</h3>
                         <p>Advanced cybersecurity solutions to secure your business and data.</p>
                     </div>
-                    <div class="service-tile">
+                    <div class="service-tile" data-aos="fade-up" data-aos-delay="400">
                         <h3>Automation</h3>
                         <p>Efficient automation solutions to streamline business processes.</p>
                     </div>
@@ -79,63 +138,116 @@
         
 
         <!-- Past Work Section -->
-        <!-- Past Work Section -->
-<!-- Past Work Section -->
-<section id="past-work" class="section">
-    <div class="container">
-        <h2>Past Work</h2>
-        <div class="work-item">
-            <h3>Custom E-commerce Website for Ara's Hot Chicken</h3>
-            <p>We developed a fully functional e-commerce website for Ara's Hot Chicken using modern web technologies and analytics tools.</p>
-            <a href="https://arashotchicken.com/" target="_blank" class="website-link">Visit Website</a>
-            
-            <!-- Key highlights list -->
-            <ul class="project-details">
-                <li><strong>Built with React:</strong> A responsive, dynamic website interface built using React for a smooth and interactive user experience.</li>
-                <li><strong>Hosted on Firebase:</strong> Leveraged Firebase for reliable and scalable hosting, allowing for real-time data synchronization and fast load times.</li>
-                <li><strong>Square Integration:</strong> Integrated Square's online ordering system to enable seamless, secure transactions and enhance the user shopping experience.</li>
-                <li><strong>Google Analytics:</strong> Implemented Google Analytics to track user behavior, optimize conversion rates, and provide insights into customer engagement.</li>
-            </ul>
-            
-            <!-- Screenshots for visualization -->
-
-        
-            <div class="project-images">
-                <img src="Homepage.gif" alt="Homepage of Ara's Hot Chicken" class="project-image">
-                <img src="Square.png" alt="Online Ordering Page" class="project-image">
+        <section id="past-work" class="section">
+            <div class="container">
+                <h2>Past Work</h2>
+                <div class="project-row">
+                    <div class="project-flex-group">
+                        <div class="work-item">
+                            <h3>Custom E-commerce Website for Ara's Hot Chicken</h3>
+                            <p>We developed a fully functional e-commerce website for Ara's Hot Chicken using modern web technologies and analytics tools.</p>
+                            <a href="https://arashotchicken.com/" target="_blank" class="website-link">Visit Website</a>
+                            <!-- Key highlights list -->
+                            <ul class="project-details">
+                                <li><strong>Built with React:</strong> A responsive, dynamic website interface built using React for a smooth and interactive user experience.</li>
+                                <li><strong>Hosted on Firebase:</strong> Leveraged Firebase for reliable and scalable hosting, allowing for real-time data synchronization and fast load times.</li>
+                                <li><strong>Square Integration:</strong> Integrated Square's online ordering system to enable seamless, secure transactions and enhance the user shopping experience.</li>
+                                <li><strong>Google Analytics:</strong> Implemented Google Analytics to track user behavior, optimize conversion rates, and provide insights into customer engagement.</li>
+                            </ul>
+                            <!-- Screenshots for visualization -->
+                            <div class="project-images">
+                                <img src="Homepage.gif" alt="Homepage of Ara's Hot Chicken" class="project-image">
+                                <img src="Square.png" alt="Online Ordering Page" class="project-image">
+                            </div>
+                        </div>
+                        <div class="work-stats-panel" data-aos="fade-left" data-aos-delay="200">
+                            <div class="work-stats-title">Project Impact</div>
+                            <div class="work-stats-summary">A modern e-commerce platform that boosted sales, improved user experience, and ensured secure transactions for Ara's Hot Chicken.</div>
+                            <div class="work-stats-divider"></div>
+                            <ul class="work-stats-list">
+                                <li><span class="work-stat-icon">🚀</span> <span class="work-stat-value countup" data-count="1000">0</span>+ Orders Processed</li>
+                                <li><span class="work-stat-icon">⏱️</span> <span class="work-stat-value countup" data-count="50">0</span>% Faster Checkout</li>
+                                <li><span class="work-stat-icon">📈</span> <span class="work-stat-value countup" data-count="30">0</span>% Increase in Online Sales</li>
+                                <li><span class="work-stat-icon">🔒</span> <span class="work-stat-value countup" data-count="100">0</span>% Secure Transactions</li>
+                            </ul>
+                            <a href="/arashotchicken-case-study.pdf" class="work-pdf-btn" target="_blank">Download PDF</a>
+                        </div>
+                    </div>
+                    <div class="project-flex-group">
+                        <div class="work-item">
+                            <h3>Bergsn Promise: Automated Onboarding & Compliance</h3>
+                            <p>Automated the onboarding process using Python, PowerShell, Selenium, React, and admin tools like Google, Active Directory, and Duo, achieving a 91% time reduction and compliance with government mandates.</p>
+                            <!-- Key highlights list -->
+                            <ul class="project-details">
+                                <li><strong>Automation with Python & PowerShell:</strong> Developed scripts to automate repetitive onboarding tasks, reducing manual effort and errors.</li>
+                                <li><strong>Selenium & React:</strong> Used Selenium for browser automation and React for admin dashboards and workflow management.</li>
+                                <li><strong>Admin Tools Integration:</strong> Automated provisioning and access using Google Admin, Active Directory, and Duo for secure, compliant onboarding.</li>
+                                <li><strong>91% Time Reduction:</strong> Streamlined the process, cutting onboarding time from days to hours and ensuring compliance with government mandates.</li>
+                            </ul>
+                            <!-- Screenshots for visualization -->
+                            <div class="project-images">
+                                <figure>
+                                    <img src="onboarding.png" alt="Automated Onboarding Workflow" class="project-image">
+                                    <figcaption>Onboarding Form</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="code.png" alt="Automation Code Example" class="project-image">
+                                    <figcaption>Automation Code Example</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="password_check.png" alt="Password Checking Automation" class="project-image">
+                                    <figcaption>Password Checking Automation</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="work-stats-panel" data-aos="fade-left" data-aos-delay="200">
+                            <div class="work-stats-title">Project Impact</div>
+                            <div class="work-stats-summary">Automated onboarding and compliance, saving time, reducing errors, and ensuring government compliance for Bergsn Promise.</div>
+                            <div class="work-stats-divider"></div>
+                            <ul class="work-stats-list">
+                                <li><span class="work-stat-icon">⏳</span> <span class="work-stat-value countup" data-count="91">0</span>% Time Reduction</li>
+                                <li><span class="work-stat-icon">🛡️</span> <span class="work-stat-value countup" data-count="100">0</span>% Compliance</li>
+                                <li><span class="work-stat-icon">👥</span> <span class="work-stat-value countup" data-count="200">0</span>+ Employees Onboarded</li>
+                                <li><span class="work-stat-icon">⚡</span> <span class="work-stat-value countup" data-count="0">0</span> Manual Errors</li>
+                            </ul>
+                            <a href="/bergsonpromise-case-study.pdf" class="work-pdf-btn" target="_blank">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-        </div>
-    </div>
-</section>
-
-
-
+        </section>
 
         <!-- Work Experience Section -->
        
 
         <section id="about" class="section">
-            <div class="container">
-                <h2>About Cipher Consulting</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>
-                            Welcome to Cipher Consulting! My name is <strong>Shaheer Saud</strong>, and I am passionate about bridging the gap between innovative technology and secure digital growth. With a strong foundation in technology and cybersecurity, I aim to provide tailored tech solutions that meet the unique needs of every client.
-                        </p>
-                        <p>
-                            My journey began with hands-on experience at <strong>Colgate-Palmolive</strong>, where I worked on advanced security measures and streamlined IT operations. I’m currently expanding my expertise through a challenging internship at <strong>PwC</strong> in Cyber Defense and Engineering. This role has provided me with an in-depth understanding of safeguarding critical systems, analyzing vulnerabilities, and implementing cutting-edge defense strategies.
-                        </p>
-                        <p>
-                            At Cipher Consulting, I combine my professional experiences with a commitment to excellence to deliver customized solutions in <strong>computer services</strong>, <strong>app development</strong>, and <strong>cybersecurity consulting</strong>. Whether it's fixing computers, designing user-friendly applications, or securing businesses from cyber threats, my goal is to empower individuals and organizations to thrive in the digital age.
-                        </p>
-                        <p>
-                            Technology is not just my profession—it's my passion. I believe in staying ahead of the curve, leveraging my skills to drive innovation while ensuring safety and reliability for my clients. Let's work together to build a more secure and technologically advanced future!
-                        </p>
+            <h2>About Cipher Consulting</h2>
+            <div class="about-card" data-aos="fade-up">
+                <div class="about-card-main">
+                    <div class="about-card-profile">
+                        <img src="your-photo.png" alt="Shaheer Saud" class="about-card-photo" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="about-card-name-title">
+                            <h3 class="about-card-name">Shaheer Saud</h3>
+                            <div class="about-card-title">Founder & Principal Consultant</div>
+                            <div class="about-card-tagline">Empowering Secure Digital Growth</div>
+                        </div>
                     </div>
-                    <div class="about-images">
-                        <img src="your-photo.png" alt="Shaheer Saud" class="about-image">
-                        <img src="cipher_consultings.png" alt="Cipher Consulting Work" class="about-image">
+                    <div class="about-card-content">
+                        <p>Welcome to Cipher Consulting! I am passionate about bridging the gap between innovative technology and secure digital growth. With a strong foundation in technology and cybersecurity, I aim to provide tailored tech solutions that meet the unique needs of every client.</p>
+                        <div class="about-card-badges" data-aos="fade-right" data-aos-delay="200">
+                            <span class="about-badge"><img src="Colgate.jpeg" alt="Colgate-Palmolive" title="Colgate-Palmolive"/></span>
+                            <span class="about-badge"><img src="PwC.png" alt="PwC" title="PwC"/></span>
+                            <span class="about-badge skill">Cybersecurity</span>
+                            <span class="about-badge skill">App Development</span>
+                            <span class="about-badge skill">Automation</span>
+                        </div>
+                        <p>My journey began with hands-on experience at <strong>Colgate-Palmolive</strong>, where I worked on advanced security measures and streamlined IT operations. I'm currently expanding my expertise through a challenging internship at <strong>PwC</strong> in Cyber Defense and Engineering. This role has provided me with an in-depth understanding of safeguarding critical systems, analyzing vulnerabilities, and implementing cutting-edge defense strategies.</p>
+                        <p>At Cipher Consulting, I combine my professional experiences with a commitment to excellence to deliver customized solutions in <strong>computer services</strong>, <strong>app development</strong>, and <strong>cybersecurity consulting</strong>. Whether it's fixing computers, designing user-friendly applications, or securing businesses from cyber threats, my goal is to empower individuals and organizations to thrive in the digital age.</p>
+                        <blockquote class="about-quote" data-aos="fade-left" data-aos-delay="300">
+                            <span class="about-quote-icon">“</span>
+                            Technology is not just my profession—it's my passion. I believe in staying ahead of the curve, leveraging my skills to drive innovation while ensuring safety and reliability for my clients. Let's work together to build a more secure and technologically advanced future!
+                        </blockquote>
+                        <a href="#contact" class="about-cta-btn" data-aos="zoom-in" data-aos-delay="400">Let's Work Together</a>
                     </div>
                 </div>
             </div>
@@ -147,13 +259,74 @@
         <section id="contact" class="section">
             <div class="container">
                 <h2>Contact Us</h2>
-                <form id="contact-form" onsubmit="sendEmail(event)">
-                    <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit">Send Message</button>
-                    <p id="form-status" class="form-status"></p>
-                </form>
+                <div class="contact-container" data-aos="fade-up">
+                    <div class="contact-form-container">
+                        <form id="contact-form" onsubmit="sendEmail(event)">
+                            <div class="form-group">
+                                <div class="input-icon">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-icon">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-icon">
+                                    <i class="fas fa-message"></i>
+                                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                                </div>
+                            </div>
+                            <button type="submit" class="submit-btn">
+                                <span class="btn-text">Send Message</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                            <div id="form-status" class="form-status"></div>
+                        </form>
+                    </div>
+                    <div class="contact-info-panel" data-aos="fade-left" data-aos-delay="200">
+                        <h3>Get in Touch</h3>
+                        <div class="response-badge">We respond within 5 hours</div>
+                        <p class="contact-intro">Have a project in mind? Let's discuss how we can help transform your ideas into reality.</p>
+                        <div class="contact-info-divider"></div>
+                        <div class="contact-info-item">
+                            <span class="icon-circle"><i class="fas fa-envelope"></i></span>
+                            <div>
+                                <h4>Email Us</h4>
+                                <p>shaheersadu2004@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <span class="icon-circle"><i class="fas fa-phone"></i></span>
+                            <div>
+                                <h4>Call Us</h4>
+                                <p><a href="tel:7323148699" class="contact-phone-link">732-314-8699</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <span class="icon-circle"><i class="fas fa-clock"></i></span>
+                            <div>
+                                <h4>Response Time</h4>
+                                <p>Within 5 hours</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <span class="icon-circle"><i class="fas fa-shield-alt"></i></span>
+                            <div>
+                                <h4>Secure Communication</h4>
+                                <p>Your data is protected</p>
+                            </div>
+                        </div>
+                        <div class="contact-social">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         
@@ -164,6 +337,13 @@
             <p>&copy; 2024 Cipher Consulting - Empowering Secure Digital Growth</p>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (window.AOS) AOS.init();
+      });
+    </script>
 
 </body>
 </html>
