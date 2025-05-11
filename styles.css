@@ -2063,14 +2063,34 @@ h1::after, h2::after, h3::after {
 }
 
 .form-status.success {
-    background: #e6f4ea;
+    background: #e6f9ed;
     color: #1e7e34;
     border: 1.5px solid #b7e4c7;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(30, 126, 52, 0.08);
+    font-size: 1.13rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 18px 0;
+    margin-top: 18px;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInSuccess 0.5s;
 }
 
 .form-status.success .status-icon {
     color: #1e7e34;
-    font-size: 1.3em;
+    font-size: 1.5em;
+    margin-right: 8px;
+}
+
+@keyframes fadeInSuccess {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Enhanced Contact Info Panel Styles */
@@ -2316,18 +2336,18 @@ h1::after, h2::after, h3::after {
         min-height: 48px;
     }
     .header-logo-bg {
+        width: 44px;
+        height: 44px;
+    }
+    .logo {
         width: 32px;
         height: 32px;
     }
-    .logo {
-        width: 20px;
-        height: 20px;
-    }
     .brand-title {
-        font-size: 1.1rem;
+        font-size: 1.45rem;
     }
     .brand-tagline {
-        font-size: 0.7rem;
+        font-size: 0.95rem;
     }
     .nav-bar {
         display: none;
@@ -2550,18 +2570,18 @@ h1::after, h2::after, h3::after {
         min-height: 48px;
     }
     .header-logo-bg {
+        width: 44px;
+        height: 44px;
+    }
+    .logo {
         width: 32px;
         height: 32px;
     }
-    .logo {
-        width: 20px;
-        height: 20px;
-    }
     .brand-title {
-        font-size: 1.1rem;
+        font-size: 1.45rem;
     }
     .brand-tagline {
-        font-size: 0.7rem;
+        font-size: 0.95rem;
     }
     .nav-bar {
         display: none;

@@ -69,7 +69,7 @@ if (contactForm) {
         headers: { 'Accept': 'application/json' }
       });
       if (response.ok) {
-        formStatus.innerHTML = '<span class="status-icon"><i class="fas fa-check-circle"></i></span> Message sent successfully! We\'ll be in touch soon.';
+        formStatus.innerHTML = '<span class="status-icon"><i class="fas fa-check-circle"></i></span> Thank you! Your message was sent successfully. We\'ll be in touch soon.';
         formStatus.className = 'form-status success';
         contactForm.reset();
         submitBtn.style.background = '#1e7e34';
