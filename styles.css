@@ -370,6 +370,12 @@ header {
     .hero-section {
         padding-top: 60px;
     }
+    .hero-float-img {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        display: block;
+    }
 }
 
 /* Section Styles */
@@ -2326,28 +2332,28 @@ h1::after, h2::after, h3::after {
 
 @media (max-width: 700px) {
     header {
-        min-height: 48px;
+        min-height: 32px;
         padding: 0;
     }
     .header-container {
         flex-direction: row;
         align-items: center;
-        padding: 0 8px;
-        min-height: 48px;
+        padding: 0 4px;
+        min-height: 32px;
     }
     .header-logo-bg {
-        width: 44px;
-        height: 44px;
-    }
-    .logo {
         width: 32px;
         height: 32px;
     }
+    .logo {
+        width: 20px;
+        height: 20px;
+    }
     .brand-title {
-        font-size: 1.45rem;
+        font-size: 1rem;
     }
     .brand-tagline {
-        font-size: 0.95rem;
+        font-size: 0.7rem;
     }
     .nav-bar {
         display: none;
@@ -2372,8 +2378,8 @@ h1::after, h2::after, h3::after {
     }
     .mobile-nav .nav-link {
         color: #fff;
-        font-size: 1.4rem;
-        padding: 18px 0;
+        font-size: 1.1rem;
+        padding: 12px 0;
         border-radius: 0;
         background: none;
         box-shadow: none;
@@ -2560,28 +2566,28 @@ h1::after, h2::after, h3::after {
 
 @media (max-width: 700px) {
     header {
-        min-height: 48px;
+        min-height: 32px;
         padding: 0;
     }
     .header-container {
         flex-direction: row;
         align-items: center;
-        padding: 0 8px;
-        min-height: 48px;
+        padding: 0 4px;
+        min-height: 32px;
     }
     .header-logo-bg {
-        width: 44px;
-        height: 44px;
-    }
-    .logo {
         width: 32px;
         height: 32px;
     }
+    .logo {
+        width: 20px;
+        height: 20px;
+    }
     .brand-title {
-        font-size: 1.45rem;
+        font-size: 1rem;
     }
     .brand-tagline {
-        font-size: 0.95rem;
+        font-size: 0.7rem;
     }
     .nav-bar {
         display: none;
@@ -2606,8 +2612,8 @@ h1::after, h2::after, h3::after {
     }
     .mobile-nav .nav-link {
         color: #fff;
-        font-size: 1.4rem;
-        padding: 18px 0;
+        font-size: 1.1rem;
+        padding: 12px 0;
         border-radius: 0;
         background: none;
         box-shadow: none;
