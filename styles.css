@@ -2342,12 +2342,15 @@ h1::after, h2::after, h3::after {
         min-height: 32px;
     }
     .header-logo-bg {
-        width: 32px;
-        height: 32px;
+        width: 40px;
+        height: 40px;
+        margin-right: 8px;
     }
     .logo {
-        width: 20px;
-        height: 20px;
+        width: 32px;
+        height: 32px;
+        object-fit: contain;
+        padding: 2px;
     }
     .brand-title {
         font-size: 1.7rem;
@@ -2406,7 +2409,6 @@ h1::after, h2::after, h3::after {
     .hero-float-6 { left: 65%; }
     .hero-float-7 { left: 77%; }
     .hero-float-8 { left: 89%; }
-    /* Optionally hide the rest for clarity */
     .hero-float-9, .hero-float-10, .hero-float-11, .hero-float-12, .hero-float-13, .hero-float-14, .hero-float-15, .hero-float-16, .hero-float-17, .hero-float-18, .hero-float-19, .hero-float-20, .hero-float-21, .hero-float-22 {
         display: none;
     }
@@ -2599,12 +2601,15 @@ h1::after, h2::after, h3::after {
         min-height: 32px;
     }
     .header-logo-bg {
-        width: 32px;
-        height: 32px;
+        width: 40px;
+        height: 40px;
+        margin-right: 8px;
     }
     .logo {
-        width: 20px;
-        height: 20px;
+        width: 32px;
+        height: 32px;
+        object-fit: contain;
+        padding: 2px;
     }
     .brand-title {
         font-size: 1.7rem;
@@ -2663,7 +2668,6 @@ h1::after, h2::after, h3::after {
     .hero-float-6 { left: 65%; }
     .hero-float-7 { left: 77%; }
     .hero-float-8 { left: 89%; }
-    /* Optionally hide the rest for clarity */
     .hero-float-9, .hero-float-10, .hero-float-11, .hero-float-12, .hero-float-13, .hero-float-14, .hero-float-15, .hero-float-16, .hero-float-17, .hero-float-18, .hero-float-19, .hero-float-20, .hero-float-21, .hero-float-22 {
         display: none;
     }
