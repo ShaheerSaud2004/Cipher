@@ -2335,6 +2335,57 @@ h1::after, h2::after, h3::after {
     display: flex;
 }
 
+.calendly-panel {
+    background: rgba(10, 40, 90, 0.75);
+    backdrop-filter: blur(8px) saturate(1.2);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+    border-radius: 20px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 12px 24px 12px;
+    min-width: 320px;
+    max-width: 420px;
+    margin-left: 0;
+    margin-top: 0;
+    flex: 1 1 340px;
+    height: 100%;
+    position: relative;
+    gap: 18px;
+}
+.calendly-panel h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #fff;
+}
+@media (max-width: 1100px) {
+    .calendly-panel {
+        max-width: 100%;
+        width: 100%;
+        margin-top: 18px;
+        align-self: flex-start;
+        min-width: 0;
+        padding: 18px 4px 12px 4px;
+    }
+}
+@media (max-width: 900px) {
+    .contact-container {
+        flex-direction: column !important;
+        display: flex !important;
+        gap: 18px;
+    }
+    .calendly-panel {
+        max-width: 100%;
+        width: 100%;
+        margin-top: 18px;
+        align-self: flex-start;
+        min-width: 0;
+        padding: 12px 2px 10px 2px;
+    }
+}
+
 
 
 
