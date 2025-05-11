@@ -2350,13 +2350,13 @@ h1::after, h2::after, h3::after {
         height: 20px;
     }
     .brand-title {
-        font-size: 1rem;
+        font-size: 1.7rem;
     }
     .brand-tagline {
-        font-size: 0.7rem;
+        font-size: 1.1rem;
     }
     .nav-bar {
-        display: none;
+        display: none !important;
     }
     .hamburger {
         display: flex;
@@ -2596,13 +2596,13 @@ h1::after, h2::after, h3::after {
         height: 20px;
     }
     .brand-title {
-        font-size: 1rem;
+        font-size: 1.7rem;
     }
     .brand-tagline {
-        font-size: 0.7rem;
+        font-size: 1.1rem;
     }
     .nav-bar {
-        display: none;
+        display: none !important;
     }
     .hamburger {
         display: flex;
