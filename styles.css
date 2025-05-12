@@ -2680,6 +2680,14 @@ h1::after, h2::after, h3::after {
     display: flex;
 }
 
+@media (max-width: 1024px) {
+    .nav-bar,
+    .hamburger,
+    .mobile-nav {
+        display: none !important;
+    }
+}
+
 
 
 
