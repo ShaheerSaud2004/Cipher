@@ -2688,6 +2688,15 @@ h1::after, h2::after, h3::after {
     }
 }
 
+.contact-email-callout {
+    white-space: nowrap;
+    overflow-x: auto;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 
 
