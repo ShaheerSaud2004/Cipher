@@ -169,23 +169,52 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Hamburger menu for mobile nav
-const hamburgerBtn = document.getElementById('hamburger-btn');
-const mobileNav = document.getElementById('mobile-nav');
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const mobileNav = document.getElementById('mobile-nav');
 
-if (hamburgerBtn && mobileNav) {
-  hamburgerBtn.addEventListener('click', function() {
-    mobileNav.classList.toggle('open');
-    hamburgerBtn.classList.toggle('is-active');
-  });
+  console.log('Hamburger button:', hamburgerBtn);
+  console.log('Mobile nav:', mobileNav);
 
-  // Close mobile nav when a link is clicked
-  mobileNav.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileNav.classList.remove('open');
-      hamburgerBtn.classList.remove('is-active');
+  if (hamburgerBtn && mobileNav) {
+    hamburgerBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      console.log('Hamburger clicked!');
+      
+      mobileNav.classList.toggle('open');
+      hamburgerBtn.classList.toggle('is-active');
+      
+      console.log('Mobile nav classes:', mobileNav.className);
+      console.log('Hamburger classes:', hamburgerBtn.className);
     });
-  });
-}
+
+    // Close mobile nav when a link is clicked
+    mobileNav.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        console.log('Nav link clicked, closing menu');
+        mobileNav.classList.remove('open');
+        hamburgerBtn.classList.remove('is-active');
+      });
+    });
+    
+    // Close mobile nav when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!hamburgerBtn.contains(e.target) && !mobileNav.contains(e.target)) {
+        if (mobileNav.classList.contains('open')) {
+          console.log('Clicking outside, closing menu');
+          mobileNav.classList.remove('open');
+          hamburgerBtn.classList.remove('is-active');
+        }
+      }
+    });
+  } else {
+    console.error('Hamburger menu elements not found!');
+    if (!hamburgerBtn) console.error('hamburger-btn not found');
+    if (!mobileNav) console.error('mobile-nav not found');
+  }
+});
 
 // Calendly floating button popup
 // (Removed: now handled by Calendly badge widget)
