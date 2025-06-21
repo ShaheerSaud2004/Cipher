@@ -2653,42 +2653,107 @@ h1::after, h2::after, h3::after {
     .header-container {
         justify-content: space-between;
         align-items: center;
-        padding: 0 16px;
+        padding: 0 12px;
+        min-height: 70px;
     }
     
     .header-logo-text {
         flex: 1;
+        min-width: 0;
+    }
+    
+    .header-text {
+        min-width: 0;
+        flex-shrink: 1;
+    }
+    
+    .brand-title {
+        font-size: 1.4rem;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+    
+    .brand-cipher, .brand-consulting {
+        font-size: 1.4rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .brand-tagline {
+        font-size: 0.7rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
     }
     
     .hamburger {
-        margin-left: 16px;
+        margin-left: 12px;
         flex-shrink: 0;
+        width: 32px;
+        height: 32px;
+    }
+    
+    .hamburger span {
+        width: 22px;
+        height: 2px;
     }
 }
 
 /* Extra small screens */
 @media (max-width: 480px) {
     .header-container {
-        padding: 0 12px;
+        padding: 0 8px;
+        min-height: 60px;
+    }
+    
+    .header-logo-bg {
+        width: 32px;
+        height: 32px;
+        margin-right: 8px;
+    }
+    
+    .logo {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .brand-title {
+        font-size: 1.1rem;
+        letter-spacing: 0.3px;
+        gap: 2px;
+    }
+    
+    .brand-cipher, .brand-consulting {
+        font-size: 1.1rem;
+        letter-spacing: 0.3px;
+    }
+    
+    .brand-tagline {
+        font-size: 0.65rem;
+        margin-top: 1px;
     }
     
     .hamburger {
-        width: 1.8rem;
-        height: 1.8rem;
-        margin-left: 12px;
+        width: 28px;
+        height: 28px;
+        margin-left: 8px;
     }
     
     .hamburger span {
-        width: 1.8rem;
-        height: 0.2rem;
+        width: 20px;
+        height: 2px;
+        margin: 3px 0;
     }
     
     .mobile-nav .nav-link {
-        font-size: 1.8rem;
-        padding: 10px 20px;
+        font-size: 1.6rem;
+        padding: 8px 16px;
     }
     
-    /* Make project images even larger on very small screens */
+    /* Project images for very small screens */
     .project-images {
         gap: 20px;
         padding: 0 12px;
