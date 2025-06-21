@@ -171,14 +171,18 @@ document.addEventListener('DOMContentLoaded', function() {
 // Hamburger menu for mobile nav
 const hamburgerBtn = document.getElementById('hamburger-btn');
 const mobileNav = document.getElementById('mobile-nav');
+
 if (hamburgerBtn && mobileNav) {
   hamburgerBtn.addEventListener('click', function() {
     mobileNav.classList.toggle('open');
+    hamburgerBtn.classList.toggle('is-active');
   });
+
   // Close mobile nav when a link is clicked
   mobileNav.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
       mobileNav.classList.remove('open');
+      hamburgerBtn.classList.remove('is-active');
     });
   });
 }
