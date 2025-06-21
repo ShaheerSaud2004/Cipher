@@ -44,7 +44,7 @@
                     <li><a href="#about" class="nav-link" data-scroll>About Us</a></li>
                     <li><a href="#services" class="nav-link" data-scroll>Services</a></li>
                     <li><a href="#past-work" class="nav-link" data-scroll>Past Work</a></li>
-                    <li><a href="#contact" class="nav-link" data-scroll>Contact</a></li>
+                    <li><a href="#schedule" class="nav-link" data-scroll>Schedule</a></li>
                 </ul>
             </nav>
             <button class="hamburger" id="hamburger-btn" aria-label="Open navigation">
@@ -60,7 +60,7 @@
             <li><a href="#about" class="nav-link" data-scroll>About Us</a></li>
             <li><a href="#services" class="nav-link" data-scroll>Services</a></li>
             <li><a href="#past-work" class="nav-link" data-scroll>Past Work</a></li>
-            <li><a href="#contact" class="nav-link" data-scroll>Contact</a></li>
+            <li><a href="#schedule" class="nav-link" data-scroll>Schedule</a></li>
         </ul>
     </div>
 
@@ -91,7 +91,7 @@
         <div class="hero-content">
             <h1 class="hero-title">Empowering Secure Digital Growth</h1>
             <p class="hero-subtitle">Cipher Consulting delivers expert IT solutions, cybersecurity, and automation to help your business thrive in the digital age.</p>
-            <a href="#contact" class="hero-cta">Get Started</a>
+            <a href="#schedule" class="hero-cta">Get Started</a>
             <div class="hero-illustration">
                 <svg class="hero-key-svg key-float" width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <defs>
@@ -149,7 +149,7 @@
                         <span class="about-quote-icon">"</span>
                         Technology is not just my profession—it's my passion. I believe in staying ahead of the curve, leveraging my skills to drive innovation while ensuring safety and reliability for my clients. Let's work together to build a more secure and technologically advanced future!
                     </blockquote>
-                    <a href="#contact" class="about-cta-btn" data-aos="zoom-in" data-aos-delay="400">Let's Work Together</a>
+                    <a href="#schedule" class="about-cta-btn" data-aos="zoom-in" data-aos-delay="400">Let's Work Together</a>
                 </div>
             </div>
         </div>
@@ -328,81 +328,63 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
+    <!-- Schedule Appointment Section -->
+    <section id="schedule" class="section schedule-section">
         <div class="container">
-            <h2>Contact Us</h2>
-            <div class="contact-container" data-aos="fade-up">
-                <div class="contact-form-container">
-                    <h3 class="contact-form-title">Send Us a Message</h3>
-                    <p class="contact-form-intro">We'd love to hear from you! Fill out the form below or use the email address below to contact us directly.</p>
-                    <div class="contact-email-callout">
-                        <span>Email us directly at <a href="mailto:shaheersaud2004@gmail.com"><strong>shaheersaud2004@gmail.com</strong></a></span>
+            <div class="schedule-content" data-aos="fade-up">
+                <h2>Ready to Get Started?</h2>
+                <p class="schedule-intro">Schedule a free consultation to discuss your project and see how we can help transform your digital presence.</p>
+                <div class="schedule-benefits">
+                    <div class="benefit-item">
+                        <span class="benefit-icon">📅</span>
+                        <span>Free 30-minute consultation</span>
                     </div>
-                    <form id="contact-form" action="https://formspree.io/f/mnndbzrd" method="POST">
-                        <div class="form-group">
-                            <div class="input-icon">
-                                <input type="text" id="name" name="name" placeholder="Your Name" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-icon">
-                                <input type="email" id="email" name="email" placeholder="Your Email" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-icon">
-                                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                            </div>
-                        </div>
-                        <button type="submit" class="submit-btn">
-                            <span class="btn-text">Send Message</span>
-                        </button>
-                    </form>
-                    <div id="form-status"></div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">💡</span>
+                        <span>Custom solution recommendations</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🚀</span>
+                        <span>Project timeline & pricing</span>
+                    </div>
                 </div>
-                <div class="contact-info-panel" data-aos="fade-left" data-aos-delay="200">
-                    <h3>Get in Touch</h3>
-                    <div class="response-badge">We respond within 5 hours</div>
-                    <p class="contact-intro">Have a project in mind? Let's discuss how we can help transform your ideas into reality.</p>
-                    <div class="contact-info-divider"></div>
-                    <div class="contact-info-item">
-                        <span class="icon-circle"><i class="fas fa-envelope"></i></span>
-                        <div>
-                            <h4>Email Us</h4>
-                            <p>shaheersaud2004@gmail.com</p>
+                <button class="schedule-btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/shaheersaud2004'});return false;" data-aos="zoom-in" data-aos-delay="200">
+                    <span class="btn-icon">📅</span>
+                    <span class="btn-text">Schedule Your Free Consultation</span>
+                </button>
+                <p class="schedule-note">No commitment required • Available 7 days a week</p>
+                
+                <!-- Contact Information -->
+                <div class="schedule-contact-info" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Or Get in Touch Directly</h3>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <span class="contact-icon">📧</span>
+                            <div class="contact-details">
+                                <span class="contact-label">Email</span>
+                                <a href="mailto:shaheersaud2004@gmail.com" class="contact-link">shaheersaud2004@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <span class="contact-icon">📞</span>
+                            <div class="contact-details">
+                                <span class="contact-label">Phone</span>
+                                <a href="tel:7323148699" class="contact-link">732-314-8699</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="contact-info-item">
-                        <span class="icon-circle"><i class="fas fa-phone"></i></span>
-                        <div>
-                            <h4>Call Us</h4>
-                            <p><a href="tel:7323148699" class="contact-phone-link">732-314-8699</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <span class="icon-circle"><i class="fas fa-clock"></i></span>
-                        <div>
-                            <h4>Response Time</h4>
-                            <p>Within 5 hours</p>
-                        </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <span class="icon-circle"><i class="fas fa-shield-alt"></i></span>
-                        <div>
-                            <h4>Secure Communication</h4>
-                            <p>Your data is protected</p>
-                        </div>
-                    </div>
-                    <div class="contact-social-label">Connect with us</div>
-                    <div class="contact-social">
-                        <a href="https://www.linkedin.com/in/shaheer-saud/" class="social-link" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/ShaheerSaud2004" class="social-link" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/shaheer-saud/" class="social-link" target="_blank" rel="noopener" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/ShaheerSaud2004" class="social-link" target="_blank" rel="noopener" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
         </div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     </section>
 
     <!-- Footer -->
