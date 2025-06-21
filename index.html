@@ -41,10 +41,10 @@
             </div>
             <nav class="nav-bar">
                 <ul class="nav-list">
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#past-work" class="nav-link">Past Work</a></li>
-                    <li><a href="#about" class="nav-link">About Us</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#about" class="nav-link" data-scroll>About Us</a></li>
+                    <li><a href="#services" class="nav-link" data-scroll>Services</a></li>
+                    <li><a href="#past-work" class="nav-link" data-scroll>Past Work</a></li>
+                    <li><a href="#contact" class="nav-link" data-scroll>Contact</a></li>
                 </ul>
             </nav>
             <button class="hamburger" id="hamburger-btn" aria-label="Open navigation">
@@ -87,8 +87,8 @@
                 <svg class="hero-key-svg key-float" width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <defs>
                     <radialGradient id="shield-gold" cx="50%" cy="50%" r="50%">
-                      <stop offset="0%" stop-color="#ffe066"/>
-                      <stop offset="100%" stop-color="#ffcc00"/>
+                      <stop offset="0%" stop-color="#fff"/>
+                      <stop offset="100%" stop-color="#111"/>
                     </radialGradient>
                     <filter id="shield-shadow" x="-20%" y="-20%" width="140%" height="140%">
                       <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#003366" flood-opacity="0.18"/>
@@ -96,7 +96,7 @@
                   </defs>
                   <g filter="url(#shield-shadow)">
                     <!-- Shield shape -->
-                    <path d="M55 18C70 28 90 32 90 50C90 80 55 95 55 95C55 95 20 80 20 50C20 32 40 28 55 18Z" fill="#003366" stroke="#ffcc00" stroke-width="3"/>
+                    <path d="M55 18C70 28 90 32 90 50C90 80 55 95 55 95C55 95 20 80 20 50C20 32 40 28 55 18Z" fill="#003366" stroke="#111" stroke-width="3"/>
                     <!-- Lock body -->
                     <rect x="40" y="55" width="30" height="22" rx="7" fill="url(#shield-gold)" stroke="#003366" stroke-width="2"/>
                     <!-- Lock shackle -->
@@ -127,12 +127,14 @@
                     <p>Welcome to Cipher Consulting! I am passionate about bridging the gap between innovative technology and secure digital growth. With a strong foundation in technology and cybersecurity, I aim to provide tailored tech solutions that meet the unique needs of every client.</p>
                     <div class="about-card-badges" data-aos="fade-right" data-aos-delay="200">
                         <span class="about-badge"><img src="images/Colgate.jpeg" alt="Colgate-Palmolive" title="Colgate-Palmolive"/></span>
-                        <span class="about-badge"><img src="images/PwC.png" alt="PwC" title="PwC"/></span>
-                        <span class="about-badge skill">Cybersecurity</span>
+                        <span class="about-badge"><img src="images/ATT.png" alt="AT&T" title="AT&T"/></span>
+                        <span class="about-badge skill">AI</span>
+                        <span class="about-badge skill">LLMs</span>
                         <span class="about-badge skill">App Development</span>
                         <span class="about-badge skill">Automation</span>
+                        <span class="about-badge skill">Cybersecurity</span>
                     </div>
-                    <p>My journey began with hands-on experience at <strong>Colgate-Palmolive</strong>, where I worked on advanced security measures and streamlined IT operations. I'm currently expanding my expertise through a challenging internship at <strong>PwC</strong> in Cyber Defense and Engineering. This role has provided me with an in-depth understanding of safeguarding critical systems, analyzing vulnerabilities, and implementing cutting-edge defense strategies.</p>
+                    <p>My journey began with hands-on experience at <strong>Colgate-Palmolive</strong>, where I worked on advanced security measures and streamlined IT operations. I am also an <strong>AI Engineer Intern at AT&amp;T</strong>, where I work on innovative AI solutions and automation projects, further strengthening my expertise in technology and digital transformation.</p>
                     <p>At Cipher Consulting, I combine my professional experiences with a commitment to excellence to deliver customized solutions in <strong>computer services</strong>, <strong>app development</strong>, and <strong>cybersecurity consulting</strong>. Whether it's fixing computers, designing user-friendly applications, or securing businesses from cyber threats, my goal is to empower individuals and organizations to thrive in the digital age.</p>
                     <blockquote class="about-quote" data-aos="fade-left" data-aos-delay="300">
                         <span class="about-quote-icon">"</span>
@@ -149,21 +151,89 @@
         <div class="container">
             <h2>Our Services</h2>
             <div class="service-grid">
-                <div class="service-tile" data-aos="fade-up" data-aos-delay="0">
-                    <h3>Automation</h3>
-                    <p>Efficient automation solutions to streamline business processes.</p>
+                <div class="service-tile flippable" data-aos="fade-up" data-aos-delay="0">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+                            <h3>Web Development</h3>
+                            <p>Modern, responsive websites crafted to elevate your online presence.</p>
+                            <span class="flip-indicator">&#8635; Flip Me!</span>
+                        </div>
+                        <div class="service-card-back">
+                            <h3>Web Development</h3>
+                            <ul>
+                                <li>AI-powered websites</li>
+                                <li>Custom dashboards & analytics</li>
+                                <li>E-commerce & online stores</li>
+                                <li>SEO & performance optimization</li>
+                                <li>Custom CMS & integrations</li>
+                                <li>Secure, scalable hosting</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-tile" data-aos="fade-up" data-aos-delay="100">
-                    <h3>Computer Repair & Installation</h3>
-                    <p>Comprehensive solutions for all your computer repair and installation needs.</p>
+                <div class="service-tile flippable" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <div class="service-icon"><i class="fa-solid fa-cogs"></i></div>
+                            <h3>Automation</h3>
+                            <p>Efficient automation solutions to streamline business processes.</p>
+                            <span class="flip-indicator">&#8635; Flip Me!</span>
+                        </div>
+                        <div class="service-card-back">
+                            <h3>Automation</h3>
+                            <ul>
+                                <li>Custom bots & workflow automation</li>
+                                <li>Server creation & management</li>
+                                <li>Data scraping & migration</li>
+                                <li>Automated reporting</li>
+                                <li>Integration with business tools</li>
+                                <li>Custom scripts & solutions</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-tile" data-aos="fade-up" data-aos-delay="200">
-                    <h3>App Development</h3>
-                    <p>Customized app development for seamless digital experiences.</p>
+                <div class="service-tile flippable" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <div class="service-icon"><i class="fas fa-desktop"></i></div>
+                            <h3>Computer Repair & Installation</h3>
+                            <p>Comprehensive solutions for all your computer repair and installation needs.</p>
+                            <span class="flip-indicator">&#8635; Flip Me!</span>
+                        </div>
+                        <div class="service-card-back">
+                            <h3>Computer Repair & Installation</h3>
+                            <ul>
+                                <li>Virus & malware removal</li>
+                                <li>Hardware & software upgrades</li>
+                                <li>Network setup & troubleshooting</li>
+                                <li>Data recovery & backup</li>
+                                <li>Custom PC builds & consulting</li>
+                                <li>On-site & remote support</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-tile" data-aos="fade-up" data-aos-delay="300">
-                    <h3>Web Development</h3>
-                    <p>Modern, responsive websites crafted to elevate your online presence.</p>
+                <div class="service-tile flippable" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                            <h3>App Development</h3>
+                            <p>Customized app development for seamless digital experiences.</p>
+                            <span class="flip-indicator">&#8635; Flip Me!</span>
+                        </div>
+                        <div class="service-card-back">
+                            <h3>App Development</h3>
+                            <ul>
+                                <li>Android & iOS apps</li>
+                                <li>Business & productivity tools</li>
+                                <li>Custom solutions for any industry</li>
+                                <li>Cross-platform development</li>
+                                <li>UI/UX design & prototyping</li>
+                                <li>App store deployment & support</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

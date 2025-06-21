@@ -8,11 +8,14 @@ window.addEventListener("load", function () {
 });
 
 // Smooth Scroll for Navigation Links
-document.querySelectorAll(".nav-link").forEach((link) => {
+document.querySelectorAll(".nav-link[data-scroll]").forEach((link) => {
     link.addEventListener("click", function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute("href"));
-        target.scrollIntoView({ behavior: "smooth" });
+        const targetId = this.getAttribute("href");
+        const target = document.querySelector(targetId);
+        if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+        }
     });
 });
 
@@ -96,18 +99,27 @@ if (contactForm) {
   });
 }
 
-// Ripple effect for service cards
+// Remove ripple effect for service cards
+// document.querySelectorAll('.service-tile').forEach(card => {
+//   card.addEventListener('click', function(e) {
+//     const ripple = document.createElement('span');
+//     ripple.className = 'ripple';
+//     const rect = card.getBoundingClientRect();
+//     ripple.style.width = ripple.style.height = Math.max(rect.width, rect.height) + 'px';
+//     ripple.style.left = (e.clientX - rect.left - rect.width / 2) + 'px';
+//     ripple.style.top = (e.clientY - rect.top - rect.height / 2) + 'px';
+//     card.appendChild(ripple);
+//     ripple.addEventListener('animationend', () => ripple.remove());
+//   });
+// });
 
-document.querySelectorAll('.service-tile').forEach(card => {
+// Flip service cards on click with flip flash effect
+document.querySelectorAll('.service-tile.flippable').forEach(card => {
   card.addEventListener('click', function(e) {
-    const ripple = document.createElement('span');
-    ripple.className = 'ripple';
-    const rect = card.getBoundingClientRect();
-    ripple.style.width = ripple.style.height = Math.max(rect.width, rect.height) + 'px';
-    ripple.style.left = (e.clientX - rect.left - rect.width / 2) + 'px';
-    ripple.style.top = (e.clientY - rect.top - rect.height / 2) + 'px';
-    card.appendChild(ripple);
-    ripple.addEventListener('animationend', () => ripple.remove());
+    // Flip on any click, including the indicator
+    card.classList.toggle('flipped');
+    card.classList.add('flip-flash');
+    setTimeout(() => card.classList.remove('flip-flash'), 350);
   });
 });
 
@@ -173,3 +185,20 @@ if (hamburgerBtn && mobileNav) {
 
 // Calendly floating button popup
 // (Removed: now handled by Calendly badge widget)
+
+document.addEventListener("DOMContentLoaded", function() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.section');
+
+    function changeNav() {
+        let index = sections.length;
+
+        while(--index && window.scrollY + 50 < sections[index].offsetTop) {}
+        
+        navLinks.forEach((link) => link.classList.remove('active'));
+        navLinks[index].classList.add('active');
+    }
+
+    changeNav();
+    window.addEventListener('scroll', changeNav);
+});
