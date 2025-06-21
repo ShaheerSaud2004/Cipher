@@ -1541,7 +1541,7 @@ h1::after, h2::after, h3::after {
     height: 100%;
 }
 
-.project-slide {
+.project-carousel .project-slide {
     min-width: 100%;
     flex-shrink: 0;
     opacity: 1;
@@ -1551,7 +1551,7 @@ h1::after, h2::after, h3::after {
     transition: opacity 0.3s;
 }
 
-.project-slide.active {
+.project-carousel .project-slide.active {
     display: flex;
     opacity: 1;
     justify-content: center;
@@ -1769,13 +1769,42 @@ h1::after, h2::after, h3::after {
     border-radius: 30px;
     text-decoration: none;
     box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-    transition: background 0.2s, color 0.2s, transform 0.2s;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.6s;
+}
+
+.about-cta-btn:hover::before {
+    left: 100%;
 }
 
 .about-cta-btn:hover, .about-cta-btn:focus {
     background: #ffcc00;
     color: #003366;
-    transform: translateY(-2px) scale(1.04);
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 204, 0, 0.4);
+}
+
+/* Enhanced AOS animation for the button */
+.about-cta-btn[data-aos="fade-up-right"] {
+    transform: translate3d(100px, 100px, 0);
+    opacity: 0;
+}
+
+.about-cta-btn[data-aos="fade-up-right"].aos-animate {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
 }
 
 @media (max-width: 900px) {
@@ -3050,7 +3079,7 @@ h1::after, h2::after, h3::after {
     backdrop-filter: blur(15px);
     border: 2px solid rgba(255,255,255,0.25);
     min-width: 320px;
-    justify-content: center;
+    justify-content: flex-start;
     transition: all 0.3s ease;
     box-shadow: 0 8px 32px rgba(0,0,0,0.1);
 }
@@ -3086,8 +3115,8 @@ h1::after, h2::after, h3::after {
     display: flex;
     flex-direction: column;
     gap: 6px;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .contact-label {
@@ -3186,6 +3215,365 @@ h1::after, h2::after, h3::after {
     width: 45px;
     height: 45px;
     font-size: 1.1rem;
+}
+
+/* AI Highlighting Feature */
+.ai-highlight-trigger {
+    cursor: pointer !important;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.ai-highlight-trigger:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(255, 204, 0, 0.4);
+}
+
+/* Add hover functionality to all skill badges */
+.about-badge.skill {
+    cursor: pointer !important;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+
+@keyframes skill-badge-pulse {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Skill-specific highlighting styles */
+.ai-related, .app-related, .automation-related, .cybersecurity-related, .llm-related {
+    transition: all 0.8s ease;
+    border-radius: 4px;
+    padding: 2px 4px;
+    margin: -2px -4px;
+}
+
+.ai-related.highlighted {
+    background: linear-gradient(120deg, #fff3cd 0%, #ffeb3b 50%, #fff3cd 100%);
+    background-size: 200% 100%;
+    animation: highlighter-sweep 2s ease-in-out;
+    box-shadow: 0 0 8px rgba(255, 235, 59, 0.6);
+    font-weight: 700;
+    color: #333;
+}
+
+.app-related.highlighted {
+    background: linear-gradient(120deg, #e3f2fd 0%, #2196f3 50%, #e3f2fd 100%);
+    background-size: 200% 100%;
+    animation: highlighter-sweep 2s ease-in-out;
+    box-shadow: 0 0 8px rgba(33, 150, 243, 0.6);
+    font-weight: 700;
+    color: #333;
+}
+
+.automation-related.highlighted {
+    background: linear-gradient(120deg, #f3e5f5 0%, #9c27b0 50%, #f3e5f5 100%);
+    background-size: 200% 100%;
+    animation: highlighter-sweep 2s ease-in-out;
+    box-shadow: 0 0 8px rgba(156, 39, 176, 0.6);
+    font-weight: 700;
+    color: #333;
+}
+
+.cybersecurity-related.highlighted {
+    background: linear-gradient(120deg, #ffebee 0%, #f44336 50%, #ffebee 100%);
+    background-size: 200% 100%;
+    animation: highlighter-sweep 2s ease-in-out;
+    box-shadow: 0 0 8px rgba(244, 67, 54, 0.6);
+    font-weight: 700;
+    color: #333;
+}
+
+.llm-related.highlighted {
+    background: linear-gradient(120deg, #e8f5e8 0%, #4caf50 50%, #e8f5e8 100%);
+    background-size: 200% 100%;
+    animation: highlighter-sweep 2s ease-in-out;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.6);
+    font-weight: 700;
+    color: #333;
+}
+
+@keyframes highlighter-sweep {
+    0% {
+        background-position: -200% 0;
+        box-shadow: 0 0 0 rgba(255, 235, 59, 0);
+    }
+    50% {
+        background-position: 0% 0;
+        box-shadow: 0 0 12px rgba(255, 235, 59, 0.8);
+    }
+    100% {
+        background-position: 200% 0;
+        box-shadow: 0 0 8px rgba(255, 235, 59, 0.6);
+    }
+}
+
+/* Pulse effect for skill badges when highlighting is active */
+.ai-highlight-trigger.active {
+    animation: ai-badge-pulse 2s ease-in-out infinite;
+    background: linear-gradient(45deg, #111, #333, #111);
+    background-size: 200% 200%;
+    color: #ffeb3b;
+}
+
+.app-highlight-trigger.active {
+    animation: ai-badge-pulse 2s ease-in-out infinite;
+    background: linear-gradient(45deg, #111, #333, #111);
+    background-size: 200% 200%;
+    color: #2196f3;
+}
+
+.automation-highlight-trigger.active {
+    animation: ai-badge-pulse 2s ease-in-out infinite;
+    background: linear-gradient(45deg, #111, #333, #111);
+    background-size: 200% 200%;
+    color: #9c27b0;
+}
+
+.cybersecurity-highlight-trigger.active {
+    animation: ai-badge-pulse 2s ease-in-out infinite;
+    background: linear-gradient(45deg, #111, #333, #111);
+    background-size: 200% 200%;
+    color: #f44336;
+}
+
+.llm-highlight-trigger.active {
+    animation: ai-badge-pulse 2s ease-in-out infinite;
+    background: linear-gradient(45deg, #111, #333, #111);
+    background-size: 200% 200%;
+    color: #4caf50;
+}
+
+@keyframes ai-badge-pulse {
+    0%, 100% {
+        background-position: 0% 50%;
+        transform: scale(1);
+    }
+    50% {
+        background-position: 100% 50%;
+        transform: scale(1.05);
+    }
+}
+
+/* Smooth fade out for highlighting */
+.ai-related.fade-out, .app-related.fade-out, .automation-related.fade-out, .cybersecurity-related.fade-out, .llm-related.fade-out {
+    background: transparent;
+    box-shadow: none;
+    font-weight: inherit;
+    color: inherit;
+}
+
+/* Project Showcase System */
+.project-showcase {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.project-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.project-nav-btn {
+    background: #f0f0f0;
+    color: #333;
+    border: 2px solid #ddd;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 140px;
+    text-align: center;
+}
+
+.project-nav-btn:hover {
+    background: #e0e0e0;
+    border-color: #bbb;
+    transform: translateY(-2px);
+}
+
+.project-nav-btn.active {
+    background: #111;
+    color: #fff;
+    border-color: #111;
+    box-shadow: 0 4px 12px rgba(17, 17, 17, 0.3);
+}
+
+.project-container {
+    position: relative;
+    min-height: 800px;
+    overflow: visible;
+    width: 100%;
+}
+
+.project-showcase .project-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(30px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.project-showcase .project-slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    pointer-events: all;
+    position: relative;
+    z-index: 10;
+}
+
+.project-counter {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 600;
+}
+
+.current-project {
+    color: #111;
+    font-weight: 800;
+    font-size: 1.3rem;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .project-navigation {
+        gap: 8px;
+        margin-bottom: 24px;
+    }
+    
+    .project-nav-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        min-width: 120px;
+    }
+    
+    .project-container {
+        min-height: 500px;
+    }
+    
+    .project-counter {
+        margin-top: 20px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-navigation {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .project-nav-btn {
+        width: 80%;
+        max-width: 250px;
+    }
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* Add click functionality to all skill badges */
+.about-badge.skill {
+    cursor: pointer !important;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Remove hover effects - only show visual feedback when clicked/active */
+
+/* Contact Info Section in About Card */
+.contact-info {
+    margin-top: 30px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #003366;
+    text-align: center;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.contact-links .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: #111;
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border: 1px solid #111;
+}
+
+.contact-links .contact-link:hover {
+    background: #ffcc00;
+    color: #003366;
+    border-color: #ffcc00;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 204, 0, 0.3);
+}
+
+.contact-links .contact-link i {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .contact-info {
+        padding: 0;
+        margin-top: 25px;
+    }
+    
+    .contact-links {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .contact-links .contact-link {
+        justify-content: center;
+        padding: 15px;
+        font-size: 1rem;
+    }
 }
 
 
