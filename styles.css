@@ -1718,6 +1718,22 @@ h1::after, h2::after, h3::after {
   padding: 6px 18px;
   border-radius: 20px;
   font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  border: 2px solid #111;
+}
+
+.about-badge.skill:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.about-badge.skill.active {
+  background: #fff !important;
+  color: #111 !important;
+  border-color: #111 !important;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3) !important;
+  transform: scale(1.1) !important;
 }
 
 .about-quote {
@@ -3254,72 +3270,120 @@ h1::after, h2::after, h3::after {
     margin: -2px -4px;
 }
 
-.ai-related.highlighted {
-    background: linear-gradient(120deg, #fff3cd 0%, #ffeb3b 50%, #fff3cd 100%);
+.ai-related.highlighted, .llm-related.highlighted {
+    background: linear-gradient(120deg, #e8f5e8 0%, #4caf50 50%, #e8f5e8 100%);
     background-size: 200% 100%;
-    animation: highlighter-sweep 2s ease-in-out;
-    box-shadow: 0 0 8px rgba(255, 235, 59, 0.6);
+    animation: highlighter-sweep-green 1.5s ease-in-out;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.8);
     font-weight: 700;
     color: #333;
+    padding: 3px 6px;
+    border-radius: 4px;
+    margin: -3px -6px;
 }
 
 .app-related.highlighted {
     background: linear-gradient(120deg, #e3f2fd 0%, #2196f3 50%, #e3f2fd 100%);
     background-size: 200% 100%;
-    animation: highlighter-sweep 2s ease-in-out;
-    box-shadow: 0 0 8px rgba(33, 150, 243, 0.6);
+    animation: highlighter-sweep-blue 1.5s ease-in-out;
+    box-shadow: 0 0 10px rgba(33, 150, 243, 0.8);
     font-weight: 700;
     color: #333;
+    padding: 3px 6px;
+    border-radius: 4px;
+    margin: -3px -6px;
 }
 
 .automation-related.highlighted {
     background: linear-gradient(120deg, #f3e5f5 0%, #9c27b0 50%, #f3e5f5 100%);
     background-size: 200% 100%;
-    animation: highlighter-sweep 2s ease-in-out;
-    box-shadow: 0 0 8px rgba(156, 39, 176, 0.6);
+    animation: highlighter-sweep-purple 1.5s ease-in-out;
+    box-shadow: 0 0 10px rgba(156, 39, 176, 0.8);
     font-weight: 700;
     color: #333;
+    padding: 3px 6px;
+    border-radius: 4px;
+    margin: -3px -6px;
 }
 
 .cybersecurity-related.highlighted {
     background: linear-gradient(120deg, #ffebee 0%, #f44336 50%, #ffebee 100%);
     background-size: 200% 100%;
-    animation: highlighter-sweep 2s ease-in-out;
-    box-shadow: 0 0 8px rgba(244, 67, 54, 0.6);
+    animation: highlighter-sweep-red 1.5s ease-in-out;
+    box-shadow: 0 0 10px rgba(244, 67, 54, 0.8);
     font-weight: 700;
     color: #333;
+    padding: 3px 6px;
+    border-radius: 4px;
+    margin: -3px -6px;
 }
 
-.llm-related.highlighted {
-    background: linear-gradient(120deg, #e8f5e8 0%, #4caf50 50%, #e8f5e8 100%);
-    background-size: 200% 100%;
-    animation: highlighter-sweep 2s ease-in-out;
-    box-shadow: 0 0 8px rgba(76, 175, 80, 0.6);
-    font-weight: 700;
-    color: #333;
-}
-
-@keyframes highlighter-sweep {
+@keyframes highlighter-sweep-green {
     0% {
         background-position: -200% 0;
-        box-shadow: 0 0 0 rgba(255, 235, 59, 0);
+        box-shadow: 0 0 0 rgba(76, 175, 80, 0);
     }
     50% {
         background-position: 0% 0;
-        box-shadow: 0 0 12px rgba(255, 235, 59, 0.8);
+        box-shadow: 0 0 15px rgba(76, 175, 80, 1);
     }
     100% {
         background-position: 200% 0;
-        box-shadow: 0 0 8px rgba(255, 235, 59, 0.6);
+        box-shadow: 0 0 10px rgba(76, 175, 80, 0.8);
+    }
+}
+
+@keyframes highlighter-sweep-blue {
+    0% {
+        background-position: -200% 0;
+        box-shadow: 0 0 0 rgba(33, 150, 243, 0);
+    }
+    50% {
+        background-position: 0% 0;
+        box-shadow: 0 0 15px rgba(33, 150, 243, 1);
+    }
+    100% {
+        background-position: 200% 0;
+        box-shadow: 0 0 10px rgba(33, 150, 243, 0.8);
+    }
+}
+
+@keyframes highlighter-sweep-purple {
+    0% {
+        background-position: -200% 0;
+        box-shadow: 0 0 0 rgba(156, 39, 176, 0);
+    }
+    50% {
+        background-position: 0% 0;
+        box-shadow: 0 0 15px rgba(156, 39, 176, 1);
+    }
+    100% {
+        background-position: 200% 0;
+        box-shadow: 0 0 10px rgba(156, 39, 176, 0.8);
+    }
+}
+
+@keyframes highlighter-sweep-red {
+    0% {
+        background-position: -200% 0;
+        box-shadow: 0 0 0 rgba(244, 67, 54, 0);
+    }
+    50% {
+        background-position: 0% 0;
+        box-shadow: 0 0 15px rgba(244, 67, 54, 1);
+    }
+    100% {
+        background-position: 200% 0;
+        box-shadow: 0 0 10px rgba(244, 67, 54, 0.8);
     }
 }
 
 /* Pulse effect for skill badges when highlighting is active */
-.ai-highlight-trigger.active {
+.ai-llm-highlight-trigger.active {
     animation: ai-badge-pulse 2s ease-in-out infinite;
     background: linear-gradient(45deg, #111, #333, #111);
     background-size: 200% 200%;
-    color: #ffeb3b;
+    color: #4caf50;
 }
 
 .app-highlight-trigger.active {
@@ -3341,13 +3405,6 @@ h1::after, h2::after, h3::after {
     background: linear-gradient(45deg, #111, #333, #111);
     background-size: 200% 200%;
     color: #f44336;
-}
-
-.llm-highlight-trigger.active {
-    animation: ai-badge-pulse 2s ease-in-out infinite;
-    background: linear-gradient(45deg, #111, #333, #111);
-    background-size: 200% 200%;
-    color: #4caf50;
 }
 
 @keyframes ai-badge-pulse {
@@ -3574,6 +3631,115 @@ h1::after, h2::after, h3::after {
         padding: 15px;
         font-size: 1rem;
     }
+}
+
+.about-badge.skill {
+  background: #111;
+  color: #fff;
+  font-weight: 700;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  border: 2px solid #111;
+}
+
+.about-badge.skill:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Specific color states for each skill when active - Higher specificity */
+.about-badge.skill.ai-llm-highlight-trigger.active,
+.about-badge.skill.ai-llm-highlight-trigger.active:hover {
+  background: transparent !important;
+  color: #4caf50 !important;
+  border-color: #4caf50 !important;
+  box-shadow: 0 0 15px rgba(76, 175, 80, 0.6) !important;
+  transform: scale(1.1) !important;
+}
+
+.about-badge.skill.app-highlight-trigger.active,
+.about-badge.skill.app-highlight-trigger.active:hover {
+  background: #2196f3 !important;
+  color: #fff !important;
+  border-color: #2196f3 !important;
+  box-shadow: 0 0 15px rgba(33, 150, 243, 0.6) !important;
+  transform: scale(1.1) !important;
+}
+
+.about-badge.skill.automation-highlight-trigger.active,
+.about-badge.skill.automation-highlight-trigger.active:hover {
+  background: #9c27b0 !important;
+  color: #fff !important;
+  border-color: #9c27b0 !important;
+  box-shadow: 0 0 15px rgba(156, 39, 176, 0.6) !important;
+  transform: scale(1.1) !important;
+}
+
+.about-badge.skill.cybersecurity-highlight-trigger.active,
+.about-badge.skill.cybersecurity-highlight-trigger.active:hover {
+  background: #f44336 !important;
+  color: #fff !important;
+  border-color: #f44336 !important;
+  box-shadow: 0 0 15px rgba(244, 67, 54, 0.6) !important;
+  transform: scale(1.1) !important;
+}
+
+/* HIGHEST SPECIFICITY - Button color changes when active */
+span.about-badge.skill.ai-llm-highlight-trigger.active,
+span.about-badge.skill.ai-llm-highlight-trigger.active:hover,
+span.about-badge.skill.ai-llm-highlight-trigger.active:focus {
+  background: transparent !important;
+  color: #4caf50 !important;
+  border-color: #4caf50 !important;
+  box-shadow: 0 0 15px rgba(76, 175, 80, 0.6) !important;
+  transform: scale(1.1) !important;
+  animation: none !important;
+}
+
+span.about-badge.skill.app-highlight-trigger.active,
+span.about-badge.skill.app-highlight-trigger.active:hover,
+span.about-badge.skill.app-highlight-trigger.active:focus {
+  background: #2196f3 !important;
+  color: #fff !important;
+  border-color: #2196f3 !important;
+  box-shadow: 0 0 15px rgba(33, 150, 243, 0.6) !important;
+  transform: scale(1.1) !important;
+  animation: none !important;
+}
+
+span.about-badge.skill.automation-highlight-trigger.active,
+span.about-badge.skill.automation-highlight-trigger.active:hover,
+span.about-badge.skill.automation-highlight-trigger.active:focus {
+  background: #9c27b0 !important;
+  color: #fff !important;
+  border-color: #9c27b0 !important;
+  box-shadow: 0 0 15px rgba(156, 39, 176, 0.6) !important;
+  transform: scale(1.1) !important;
+  animation: none !important;
+}
+
+span.about-badge.skill.cybersecurity-highlight-trigger.active,
+span.about-badge.skill.cybersecurity-highlight-trigger.active:hover,
+span.about-badge.skill.cybersecurity-highlight-trigger.active:focus {
+  background: #f44336 !important;
+  color: #fff !important;
+  border-color: #f44336 !important;
+  box-shadow: 0 0 15px rgba(244, 67, 54, 0.6) !important;
+  transform: scale(1.1) !important;
+  animation: none !important;
+}
+
+/* MAXIMUM SPECIFICITY - Ensure AI/LLM text turns green when active */
+span.about-badge.skill.ai-llm-highlight-trigger.active {
+  background: transparent !important;
+  color: #4caf50 !important;
+  border: 2px solid #4caf50 !important;
+  box-shadow: 0 0 15px rgba(76, 175, 80, 0.6) !important;
+  transform: scale(1.1) !important;
+  font-weight: 700 !important;
 }
 
 
