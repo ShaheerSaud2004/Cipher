@@ -436,7 +436,24 @@ body {
     transition: transform 0.3s ease;
 }
 
+.profile-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0f766e, #14b8a6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
 .profile-card:hover .profile-image img {
+    transform: scale(1.05);
+}
+
+.profile-card:hover .profile-icon {
     transform: scale(1.05);
 }
 
@@ -706,7 +723,22 @@ body {
     transition: transform 0.4s ease;
 }
 
+.member-icon {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 120px;
+    color: white;
+    transition: transform 0.4s ease;
+}
+
 .team-member:hover .member-image img {
+    transform: scale(1.05);
+}
+
+.team-member:hover .member-icon {
     transform: scale(1.05);
 }
 
@@ -1028,6 +1060,9 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
+    justify-items: center;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 .portfolio-item {
@@ -1036,6 +1071,8 @@ body {
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    width: 100%;
+    max-width: 450px;
 }
 
 .portfolio-item:hover {
