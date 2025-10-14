@@ -38,9 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Smooth Scrolling for Navigation Links
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navLinksForScroll = document.querySelectorAll('.nav-link');
     
-    navLinks.forEach(link => {
+    navLinksForScroll.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
@@ -132,14 +132,31 @@ document.addEventListener('DOMContentLoaded', function() {
     // Form Handling
     // (Removed simulation code for Formspree integration)
 
-    // Mobile Menu Toggle (if needed)
+    // Mobile Menu Toggle
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
     
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking a nav link (mobile)
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
         });
     }
 
