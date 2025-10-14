@@ -130,36 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Form Handling
-    const contactForm = document.querySelector('.contact-form form');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const submitBtn = this.querySelector('.submit-btn');
-            const originalText = submitBtn.innerHTML;
-            
-            // Show loading state
-            submitBtn.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
-            submitBtn.disabled = true;
-            
-            // Simulate form submission (replace with actual form handling)
-            setTimeout(() => {
-                submitBtn.innerHTML = '<span>Message Sent!</span><i class="fas fa-check"></i>';
-                submitBtn.style.background = 'linear-gradient(45deg, #10b981, #059669)';
-                
-                // Reset form
-                this.reset();
-                
-                // Reset button after 3 seconds
-                setTimeout(() => {
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.style.background = 'linear-gradient(45deg, #6366f1, #8b5cf6)';
-                    submitBtn.disabled = false;
-                }, 3000);
-            }, 2000);
-        });
-    }
+    // (Removed simulation code for Formspree integration)
 
     // Mobile Menu Toggle (if needed)
     const hamburger = document.querySelector('.hamburger');
