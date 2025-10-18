@@ -52,11 +52,11 @@ body {
 }
 
 .logo-text {
-    color: #ea580c;
+    color: #059669;
 }
 
 .logo-accent {
-    color: #f97316;
+    color: #10b981;
 }
 
 .nav-menu {
@@ -80,12 +80,12 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #ea580c, #f97316);
+    background: linear-gradient(90deg, #059669, #10b981);
     transition: width 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #ea580c;
+    color: #059669;
 }
 
 .nav-link:hover::after {
@@ -112,7 +112,7 @@ body {
     display: flex;
     align-items: center;
     position: relative;
-    background: linear-gradient(135deg, #dc2626 0%, #ea580c 50%, #f97316 100%);
+    background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
     overflow: hidden;
 }
 
@@ -122,17 +122,17 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, #7c2d12 0%, #9a3412 50%, #ea580c 100%);
+    background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
     opacity: 0.95;
     animation: backgroundShift 20s ease-in-out infinite;
 }
 
 @keyframes backgroundShift {
     0%, 100% { 
-        background: linear-gradient(135deg, #7c2d12 0%, #9a3412 50%, #ea580c 100%);
+        background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
     }
     50% { 
-        background: linear-gradient(135deg, #9a3412 0%, #ea580c 50%, #7c2d12 100%);
+        background: linear-gradient(135deg, #065f46 0%, #047857 50%, #064e3b 100%);
     }
 }
 
@@ -149,7 +149,7 @@ body {
     position: absolute;
     font-size: 2rem;
     opacity: 0.15;
-    color: #f97316;
+    color: #10b981;
     animation: float var(--duration) ease-in-out infinite;
     animation-delay: var(--delay);
     text-shadow: 0 0 20px rgba(20, 184, 166, 0.3);
@@ -194,25 +194,25 @@ body {
 
 .hero-badge {
     display: inline-block;
-    background: rgba(251, 146, 60, 0.2);
-    border: 1px solid rgba(251, 146, 60, 0.4);
+    background: rgba(16, 185, 129, 0.2);
+    border: 1px solid rgba(16, 185, 129, 0.4);
     border-radius: 30px;
     padding: 0.6rem 1.5rem;
     margin-bottom: 2rem;
     font-size: 0.9rem;
     font-weight: 600;
     backdrop-filter: blur(10px);
-    color: #fed7aa;
-    box-shadow: 0 4px 12px rgba(251, 146, 60, 0.15);
+    color: #a7f3d0;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
     animation: badgePulse 3s ease-in-out infinite;
 }
 
 @keyframes badgePulse {
     0%, 100% { 
-        box-shadow: 0 0 0 0 rgba(251, 146, 60, 0.4);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
     }
     50% { 
-        box-shadow: 0 0 0 10px rgba(251, 146, 60, 0);
+        box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
     }
 }
 
@@ -235,7 +235,7 @@ body {
 .title-line:nth-child(3) { animation-delay: 0.6s; }
 
 .highlight {
-    background: linear-gradient(45deg, #f97316, #fed7aa);
+    background: linear-gradient(45deg, #10b981, #a7f3d0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -244,10 +244,10 @@ body {
 
 @keyframes textGlow {
     from {
-        text-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
+        text-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
     }
     to {
-        text-shadow: 0 0 30px rgba(249, 115, 22, 0.8);
+        text-shadow: 0 0 30px rgba(16, 185, 129, 0.8);
     }
 }
 
@@ -290,7 +290,7 @@ body {
 }
 
 .cta-primary {
-    background: linear-gradient(45deg, #f97316, #ea580c);
+    background: linear-gradient(45deg, #10b981, #059669);
     color: white;
     padding: 1rem 2rem;
     border-radius: 50px;
@@ -300,7 +300,7 @@ body {
     align-items: center;
     gap: 0.5rem;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
     position: relative;
     overflow: hidden;
 }
@@ -322,7 +322,7 @@ body {
 
 .cta-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 15px 40px rgba(249, 115, 22, 0.4);
+    box-shadow: 0 15px 40px rgba(16, 185, 129, 0.4);
 }
 
 .cta-secondary {
@@ -369,7 +369,7 @@ body {
     display: block;
     font-size: 2rem;
     font-weight: 800;
-    color: #f97316;
+    color: #10b981;
     text-shadow: 0 0 10px rgba(20, 184, 166, 0.3);
 }
 
@@ -441,7 +441,7 @@ body {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #ea580c, #f97316);
+    background: linear-gradient(135deg, #059669, #10b981);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -464,7 +464,7 @@ body {
     left: -5px;
     right: -5px;
     bottom: -5px;
-    border: 3px solid #f97316;
+    border: 3px solid #10b981;
     border-radius: 50%;
     animation: pulse 2s ease-in-out infinite;
 }
@@ -533,7 +533,7 @@ body {
 
 .section-badge {
     display: inline-block;
-    background: linear-gradient(45deg, #ea580c, #f97316);
+    background: linear-gradient(45deg, #059669, #10b981);
     color: white;
     padding: 0.5rem 1.5rem;
     border-radius: 50px;
@@ -609,7 +609,7 @@ body {
 
 .card-header i {
     font-size: 1.5rem;
-    color: #f97316;
+    color: #10b981;
 }
 
 .card-header h4 {
@@ -632,7 +632,7 @@ body {
 }
 
 .highlight {
-    color: #ea580c;
+    color: #059669;
     font-weight: 600;
 }
 
@@ -701,7 +701,7 @@ body {
     left: 0;
     right: 0;
     height: 5px;
-    background: linear-gradient(90deg, #ea580c, #f97316);
+    background: linear-gradient(90deg, #059669, #10b981);
 }
 
 .team-member:hover {
@@ -714,7 +714,7 @@ body {
     position: relative;
     height: 250px;
     overflow: hidden;
-    background: linear-gradient(135deg, #ea580c, #f97316);
+    background: linear-gradient(135deg, #059669, #10b981);
 }
 
 .member-image img {
@@ -749,7 +749,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(234, 88, 12, 0.8), rgba(249, 115, 22, 0.8));
+    background: linear-gradient(135deg, rgba(5, 150, 105, 0.8), rgba(16, 185, 129, 0.8));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -799,7 +799,7 @@ body {
 
 .member-role {
     font-size: 1.1rem;
-    color: #ea580c;
+    color: #059669;
     font-weight: 600;
     margin-bottom: 0.25rem;
 }
@@ -828,7 +828,7 @@ body {
 }
 
 .highlight-item i {
-    color: #f97316;
+    color: #10b981;
     font-size: 1.1rem;
     width: 20px;
 }
@@ -903,7 +903,7 @@ body {
     content: '▸';
     position: absolute;
     left: 0;
-    color: #f97316;
+    color: #10b981;
     font-weight: bold;
 }
 
@@ -947,7 +947,7 @@ body {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #ea580c, #f97316);
+    background: linear-gradient(90deg, #059669, #10b981);
 }
 
 .service-card:hover {
@@ -957,18 +957,18 @@ body {
 }
 
 .service-card.premium {
-    border-color: #f97316;
+    border-color: #10b981;
     background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
 }
 
 .service-card.premium::before {
-    background: linear-gradient(90deg, #f97316, #fed7aa);
+    background: linear-gradient(90deg, #10b981, #a7f3d0);
 }
 
 .service-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(45deg, #ea580c, #f97316);
+    background: linear-gradient(45deg, #059669, #10b981);
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -1006,14 +1006,14 @@ body {
     content: '✓';
     position: absolute;
     left: 0;
-    color: #f97316;
+    color: #10b981;
     font-weight: bold;
 }
 
 .service-price {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #ea580c;
+    color: #059669;
     margin-top: auto;
 }
 
@@ -1200,7 +1200,7 @@ body {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #ea580c, #f97316);
+    background: linear-gradient(90deg, #059669, #10b981);
 }
 
 .client-card:hover {
@@ -1292,7 +1292,7 @@ body {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #ea580c, #f97316);
+    background: linear-gradient(90deg, #059669, #10b981);
 }
 
 .contact-card:hover {
@@ -1361,7 +1361,7 @@ body {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #ea580c, #f97316);
+    background: linear-gradient(90deg, #059669, #10b981);
 }
 
 .form-group {
@@ -1433,7 +1433,7 @@ body {
 .footer-brand h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #f97316;
+    color: #10b981;
 }
 
 .footer-brand p {
@@ -1444,7 +1444,7 @@ body {
 .footer-links h4,
 .footer-contact h4 {
     margin-bottom: 1rem;
-    color: #f97316;
+    color: #10b981;
 }
 
 .footer-links ul {
@@ -1462,7 +1462,7 @@ body {
 }
 
 .footer-links a:hover {
-    color: #f97316;
+    color: #10b981;
 }
 
 .footer-contact p {
