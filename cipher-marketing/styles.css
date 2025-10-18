@@ -52,11 +52,11 @@ body {
 }
 
 .logo-text {
-    color: #0f766e;
+    color: #ea580c;
 }
 
 .logo-accent {
-    color: #14b8a6;
+    color: #f97316;
 }
 
 .nav-menu {
@@ -80,12 +80,12 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #0f766e, #14b8a6);
+    background: linear-gradient(90deg, #ea580c, #f97316);
     transition: width 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #0f766e;
+    color: #ea580c;
 }
 
 .nav-link:hover::after {
@@ -122,17 +122,17 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f766e 100%);
+    background: linear-gradient(135deg, #7c2d12 0%, #9a3412 50%, #ea580c 100%);
     opacity: 0.95;
     animation: backgroundShift 20s ease-in-out infinite;
 }
 
 @keyframes backgroundShift {
     0%, 100% { 
-        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f766e 100%);
+        background: linear-gradient(135deg, #7c2d12 0%, #9a3412 50%, #ea580c 100%);
     }
     50% { 
-        background: linear-gradient(135deg, #1e293b 0%, #0f766e 50%, #0f172a 100%);
+        background: linear-gradient(135deg, #9a3412 0%, #ea580c 50%, #7c2d12 100%);
     }
 }
 
@@ -149,7 +149,7 @@ body {
     position: absolute;
     font-size: 2rem;
     opacity: 0.15;
-    color: #14b8a6;
+    color: #f97316;
     animation: float var(--duration) ease-in-out infinite;
     animation-delay: var(--delay);
     text-shadow: 0 0 20px rgba(20, 184, 166, 0.3);
@@ -369,7 +369,7 @@ body {
     display: block;
     font-size: 2rem;
     font-weight: 800;
-    color: #14b8a6;
+    color: #f97316;
     text-shadow: 0 0 10px rgba(20, 184, 166, 0.3);
 }
 
@@ -609,7 +609,7 @@ body {
 
 .card-header i {
     font-size: 1.5rem;
-    color: #14b8a6;
+    color: #f97316;
 }
 
 .card-header h4 {
@@ -632,7 +632,7 @@ body {
 }
 
 .highlight {
-    color: #0f766e;
+    color: #ea580c;
     font-weight: 600;
 }
 
@@ -701,7 +701,7 @@ body {
     left: 0;
     right: 0;
     height: 5px;
-    background: linear-gradient(90deg, #0f766e, #14b8a6);
+    background: linear-gradient(90deg, #ea580c, #f97316);
 }
 
 .team-member:hover {
@@ -799,7 +799,7 @@ body {
 
 .member-role {
     font-size: 1.1rem;
-    color: #0f766e;
+    color: #ea580c;
     font-weight: 600;
     margin-bottom: 0.25rem;
 }
@@ -828,7 +828,7 @@ body {
 }
 
 .highlight-item i {
-    color: #14b8a6;
+    color: #f97316;
     font-size: 1.1rem;
     width: 20px;
 }
@@ -903,7 +903,7 @@ body {
     content: '▸';
     position: absolute;
     left: 0;
-    color: #14b8a6;
+    color: #f97316;
     font-weight: bold;
 }
 
@@ -947,7 +947,7 @@ body {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #0f766e, #14b8a6);
+    background: linear-gradient(90deg, #ea580c, #f97316);
 }
 
 .service-card:hover {
@@ -1006,14 +1006,14 @@ body {
     content: '✓';
     position: absolute;
     left: 0;
-    color: #14b8a6;
+    color: #f97316;
     font-weight: bold;
 }
 
 .service-price {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #0f766e;
+    color: #ea580c;
     margin-top: auto;
 }
 
@@ -1200,7 +1200,7 @@ body {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #0f766e, #14b8a6);
+    background: linear-gradient(90deg, #ea580c, #f97316);
 }
 
 .client-card:hover {
@@ -1292,7 +1292,7 @@ body {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #0f766e, #14b8a6);
+    background: linear-gradient(90deg, #ea580c, #f97316);
 }
 
 .contact-card:hover {
@@ -1361,7 +1361,7 @@ body {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #0f766e, #14b8a6);
+    background: linear-gradient(90deg, #ea580c, #f97316);
 }
 
 .form-group {
@@ -1433,7 +1433,7 @@ body {
 .footer-brand h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #14b8a6;
+    color: #f97316;
 }
 
 .footer-brand p {
@@ -1444,7 +1444,7 @@ body {
 .footer-links h4,
 .footer-contact h4 {
     margin-bottom: 1rem;
-    color: #14b8a6;
+    color: #f97316;
 }
 
 .footer-links ul {
@@ -1462,7 +1462,7 @@ body {
 }
 
 .footer-links a:hover {
-    color: #14b8a6;
+    color: #f97316;
 }
 
 .footer-contact p {
