@@ -112,7 +112,7 @@ body {
     display: flex;
     align-items: center;
     position: relative;
-    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
     overflow: hidden;
 }
 
@@ -194,25 +194,25 @@ body {
 
 .hero-badge {
     display: inline-block;
-    background: rgba(99, 102, 241, 0.2);
-    border: 1px solid rgba(99, 102, 241, 0.4);
+    background: rgba(168, 85, 247, 0.2);
+    border: 1px solid rgba(168, 85, 247, 0.4);
     border-radius: 30px;
     padding: 0.6rem 1.5rem;
     margin-bottom: 2rem;
     font-size: 0.9rem;
     font-weight: 600;
     backdrop-filter: blur(10px);
-    color: #a5b4fc;
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+    color: #c4b5fd;
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.15);
     animation: badgePulse 3s ease-in-out infinite;
 }
 
 @keyframes badgePulse {
     0%, 100% { 
-        box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4);
+        box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.4);
     }
     50% { 
-        box-shadow: 0 0 0 10px rgba(99, 102, 241, 0);
+        box-shadow: 0 0 0 10px rgba(168, 85, 247, 0);
     }
 }
 
@@ -235,7 +235,7 @@ body {
 .title-line:nth-child(3) { animation-delay: 0.6s; }
 
 .highlight {
-    background: linear-gradient(45deg, #6366f1, #a5b4fc);
+    background: linear-gradient(45deg, #a855f7, #c4b5fd);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -244,10 +244,10 @@ body {
 
 @keyframes textGlow {
     from {
-        text-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+        text-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
     }
     to {
-        text-shadow: 0 0 30px rgba(99, 102, 241, 0.8);
+        text-shadow: 0 0 30px rgba(168, 85, 247, 0.8);
     }
 }
 
@@ -290,7 +290,7 @@ body {
 }
 
 .cta-primary {
-    background: linear-gradient(45deg, #6366f1, #4f46e5);
+    background: linear-gradient(45deg, #a855f7, #9333ea);
     color: white;
     padding: 1rem 2rem;
     border-radius: 50px;
@@ -300,7 +300,7 @@ body {
     align-items: center;
     gap: 0.5rem;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3);
     position: relative;
     overflow: hidden;
 }
@@ -322,7 +322,7 @@ body {
 
 .cta-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 15px 40px rgba(168, 85, 247, 0.4);
 }
 
 .cta-secondary {
@@ -441,7 +441,7 @@ body {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    background: linear-gradient(135deg, #9333ea, #a855f7);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -464,7 +464,7 @@ body {
     left: -5px;
     right: -5px;
     bottom: -5px;
-    border: 3px solid #6366f1;
+    border: 3px solid #a855f7;
     border-radius: 50%;
     animation: pulse 2s ease-in-out infinite;
 }
@@ -533,7 +533,7 @@ body {
 
 .section-badge {
     display: inline-block;
-    background: linear-gradient(45deg, #4f46e5, #6366f1);
+    background: linear-gradient(45deg, #9333ea, #a855f7);
     color: white;
     padding: 0.5rem 1.5rem;
     border-radius: 50px;
@@ -714,7 +714,7 @@ body {
     position: relative;
     height: 250px;
     overflow: hidden;
-    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    background: linear-gradient(135deg, #9333ea, #a855f7);
 }
 
 .member-image img {
@@ -749,7 +749,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(79, 70, 229, 0.8), rgba(99, 102, 241, 0.8));
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.8), rgba(168, 85, 247, 0.8));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -957,18 +957,18 @@ body {
 }
 
 .service-card.premium {
-    border-color: #6366f1;
+    border-color: #a855f7;
     background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
 }
 
 .service-card.premium::before {
-    background: linear-gradient(90deg, #6366f1, #a5b4fc);
+    background: linear-gradient(90deg, #a855f7, #c4b5fd);
 }
 
 .service-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(45deg, #4f46e5, #6366f1);
+    background: linear-gradient(45deg, #9333ea, #a855f7);
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -1501,7 +1501,11 @@ body {
 @media (max-width: 768px) {
     /* Navigation */
     .nav-container {
-        padding: 1rem 1.5rem;
+        padding: 0.8rem 1rem;
+    }
+    
+    .nav-logo {
+        font-size: 1.3rem;
     }
 
     .nav-menu {
@@ -1546,13 +1550,14 @@ body {
     .hero {
         flex-direction: column;
         text-align: center;
-        padding: 6rem 0 3rem;
+        padding: 5rem 0 2rem;
         min-height: auto;
     }
 
     .hero-content {
         max-width: 100%;
         padding: 0 1rem;
+        margin-bottom: 2rem;
     }
 
     .hero-visual {
@@ -1562,13 +1567,15 @@ body {
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         line-height: 1.2;
+        margin-bottom: 1rem;
     }
 
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 0.95rem;
         margin: 1.5rem 0;
+        line-height: 1.5;
     }
 
     .hero-badge {
@@ -1587,8 +1594,9 @@ body {
     .cta-secondary {
         width: 100%;
         justify-content: center;
-        padding: 1rem 2rem;
-        font-size: 1rem;
+        padding: 0.9rem 1.5rem;
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
     }
 
     .hero-stats {
@@ -1602,11 +1610,15 @@ body {
     }
 
     .stat-number {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+    
+    .stat-label {
+        font-size: 0.85rem;
     }
 
     .float-item {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     /* Profile Card */
@@ -1825,5 +1837,24 @@ body {
 
     .member-icon {
         font-size: 80px;
+    }
+    
+    /* Better mobile spacing */
+    .container {
+        padding: 0 0.8rem;
+    }
+    
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .section-subtitle {
+        font-size: 0.9rem;
+        line-height: 1.4;
     }
 }
