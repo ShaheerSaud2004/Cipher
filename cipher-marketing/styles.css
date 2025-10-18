@@ -112,7 +112,7 @@ body {
     display: flex;
     align-items: center;
     position: relative;
-    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
+    background: linear-gradient(135deg, #dc2626 0%, #ea580c 50%, #f97316 100%);
     overflow: hidden;
 }
 
@@ -194,25 +194,25 @@ body {
 
 .hero-badge {
     display: inline-block;
-    background: rgba(168, 85, 247, 0.2);
-    border: 1px solid rgba(168, 85, 247, 0.4);
+    background: rgba(251, 146, 60, 0.2);
+    border: 1px solid rgba(251, 146, 60, 0.4);
     border-radius: 30px;
     padding: 0.6rem 1.5rem;
     margin-bottom: 2rem;
     font-size: 0.9rem;
     font-weight: 600;
     backdrop-filter: blur(10px);
-    color: #c4b5fd;
-    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.15);
+    color: #fed7aa;
+    box-shadow: 0 4px 12px rgba(251, 146, 60, 0.15);
     animation: badgePulse 3s ease-in-out infinite;
 }
 
 @keyframes badgePulse {
     0%, 100% { 
-        box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.4);
+        box-shadow: 0 0 0 0 rgba(251, 146, 60, 0.4);
     }
     50% { 
-        box-shadow: 0 0 0 10px rgba(168, 85, 247, 0);
+        box-shadow: 0 0 0 10px rgba(251, 146, 60, 0);
     }
 }
 
@@ -235,7 +235,7 @@ body {
 .title-line:nth-child(3) { animation-delay: 0.6s; }
 
 .highlight {
-    background: linear-gradient(45deg, #a855f7, #c4b5fd);
+    background: linear-gradient(45deg, #f97316, #fed7aa);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -244,10 +244,10 @@ body {
 
 @keyframes textGlow {
     from {
-        text-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+        text-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
     }
     to {
-        text-shadow: 0 0 30px rgba(168, 85, 247, 0.8);
+        text-shadow: 0 0 30px rgba(249, 115, 22, 0.8);
     }
 }
 
@@ -290,7 +290,7 @@ body {
 }
 
 .cta-primary {
-    background: linear-gradient(45deg, #a855f7, #9333ea);
+    background: linear-gradient(45deg, #f97316, #ea580c);
     color: white;
     padding: 1rem 2rem;
     border-radius: 50px;
@@ -300,7 +300,7 @@ body {
     align-items: center;
     gap: 0.5rem;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3);
+    box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
     position: relative;
     overflow: hidden;
 }
@@ -322,7 +322,7 @@ body {
 
 .cta-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 15px 40px rgba(168, 85, 247, 0.4);
+    box-shadow: 0 15px 40px rgba(249, 115, 22, 0.4);
 }
 
 .cta-secondary {
@@ -441,7 +441,7 @@ body {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #9333ea, #a855f7);
+    background: linear-gradient(135deg, #ea580c, #f97316);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -464,7 +464,7 @@ body {
     left: -5px;
     right: -5px;
     bottom: -5px;
-    border: 3px solid #a855f7;
+    border: 3px solid #f97316;
     border-radius: 50%;
     animation: pulse 2s ease-in-out infinite;
 }
@@ -533,7 +533,7 @@ body {
 
 .section-badge {
     display: inline-block;
-    background: linear-gradient(45deg, #9333ea, #a855f7);
+    background: linear-gradient(45deg, #ea580c, #f97316);
     color: white;
     padding: 0.5rem 1.5rem;
     border-radius: 50px;
@@ -714,7 +714,7 @@ body {
     position: relative;
     height: 250px;
     overflow: hidden;
-    background: linear-gradient(135deg, #9333ea, #a855f7);
+    background: linear-gradient(135deg, #ea580c, #f97316);
 }
 
 .member-image img {
@@ -749,7 +749,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(147, 51, 234, 0.8), rgba(168, 85, 247, 0.8));
+    background: linear-gradient(135deg, rgba(234, 88, 12, 0.8), rgba(249, 115, 22, 0.8));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -957,18 +957,18 @@ body {
 }
 
 .service-card.premium {
-    border-color: #a855f7;
+    border-color: #f97316;
     background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
 }
 
 .service-card.premium::before {
-    background: linear-gradient(90deg, #a855f7, #c4b5fd);
+    background: linear-gradient(90deg, #f97316, #fed7aa);
 }
 
 .service-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(45deg, #9333ea, #a855f7);
+    background: linear-gradient(45deg, #ea580c, #f97316);
     border-radius: 20px;
     display: flex;
     align-items: center;
