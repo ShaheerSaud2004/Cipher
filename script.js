@@ -235,3 +235,133 @@ document.addEventListener("DOMContentLoaded", function() {
     changeNav();
     window.addEventListener('scroll', changeNav);
 });
+
+// Floating Chat Widget Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const chatWidget = document.getElementById('floating-chat-widget');
+    const chatToggleBtn = document.getElementById('chat-toggle-btn');
+    const chatCloseBtn = document.getElementById('chat-close-btn');
+    const avatar = document.querySelector('.message-avatar');
+    const expandedContent = document.getElementById('expanded-about');
+    const messageBubble = document.querySelector('.message-bubble');
+    
+    // Show chat widget immediately on page load
+    if (chatWidget) {
+        chatWidget.classList.add('show');
+        // Hide toggle button when chat is open
+        if (chatToggleBtn) {
+            chatToggleBtn.style.display = 'none';
+        }
+    }
+    
+    // Auto-minimize after 5 seconds
+    setTimeout(() => {
+        if (chatWidget && chatWidget.classList.contains('show')) {
+            chatWidget.classList.add('minimized');
+            // Show toggle button when chat is minimized
+            if (chatToggleBtn) {
+                chatToggleBtn.style.display = 'flex';
+            }
+        }
+    }, 5000); // 5 seconds total
+    
+    // Close button functionality
+    if (chatCloseBtn) {
+        chatCloseBtn.addEventListener('click', function() {
+            chatWidget.classList.remove('show');
+            chatWidget.classList.add('minimized');
+            // Show toggle button when chat is closed
+            if (chatToggleBtn) {
+                chatToggleBtn.style.display = 'flex';
+            }
+        });
+    }
+    
+    // Toggle button functionality
+    if (chatToggleBtn) {
+        chatToggleBtn.addEventListener('click', function() {
+            if (chatWidget.classList.contains('minimized')) {
+                chatWidget.classList.remove('minimized');
+                chatWidget.classList.add('show');
+                // Hide toggle button when chat is open
+                chatToggleBtn.style.display = 'none';
+            } else {
+                chatWidget.classList.remove('show');
+                chatWidget.classList.add('minimized');
+                // Show toggle button when chat is closed
+                chatToggleBtn.style.display = 'flex';
+            }
+        });
+    }
+    
+    // Chat interaction functionality
+    if (avatar && expandedContent) {
+        // Click on avatar to expand
+        avatar.addEventListener('click', function() {
+            if (expandedContent.style.display === 'none' || expandedContent.style.display === '') {
+                expandedContent.style.display = 'flex';
+                
+                // Add a subtle animation to the avatar
+                avatar.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    avatar.style.transform = 'scale(1)';
+                }, 200);
+            } else {
+                expandedContent.style.display = 'none';
+            }
+        });
+        
+        // Click on message bubble to expand (alternative)
+        messageBubble.addEventListener('click', function() {
+            if (expandedContent.style.display === 'none' || expandedContent.style.display === '') {
+                expandedContent.style.display = 'flex';
+            }
+        });
+        
+        // Add hover effects
+        avatar.addEventListener('mouseenter', function() {
+            avatar.style.transform = 'scale(1.05)';
+        });
+        
+        avatar.addEventListener('mouseleave', function() {
+            if (expandedContent.style.display === 'none' || expandedContent.style.display === '') {
+                avatar.style.transform = 'scale(1)';
+            }
+        });
+    }
+    
+    // Hide chat widget when user scrolls down significantly
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > lastScrollTop && scrollTop > 500) {
+            // Scrolling down and past 500px
+            if (chatWidget && chatWidget.classList.contains('show')) {
+                chatWidget.classList.add('minimized');
+                if (chatToggleBtn) {
+                    chatToggleBtn.style.display = 'flex';
+                }
+            }
+        }
+        
+        lastScrollTop = scrollTop;
+    });
+    
+    // Show chat widget when user scrolls back to top
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop < 200) {
+            // Near the top of the page
+            if (chatWidget && chatWidget.classList.contains('minimized')) {
+                chatWidget.classList.remove('minimized');
+                chatWidget.classList.add('show');
+                // Hide toggle button when chat is open
+                if (chatToggleBtn) {
+                    chatToggleBtn.style.display = 'none';
+                }
+            }
+        }
+    });
+});
