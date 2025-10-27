@@ -385,6 +385,10 @@ document.addEventListener('DOMContentLoaded', function() {
         websitesCategory.classList.add('active');
         productsCategory.classList.remove('active');
         console.log('Set default active category: Websites');
+        
+        // Force initial state
+        websitesCategory.style.display = 'block';
+        productsCategory.style.display = 'none';
     }
     
     categoryBtns.forEach(btn => {
@@ -400,6 +404,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Hide all project categories
             projectCategories.forEach(category => {
                 category.classList.remove('active');
+                category.style.display = 'none';
             });
             
             // Show target category
@@ -409,10 +414,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Force remove active from all categories first
                 projectCategories.forEach(category => {
                     category.classList.remove('active');
+                    category.style.display = 'none';
                 });
                 
                 // Add active to target category
                 targetCategoryElement.classList.add('active');
+                targetCategoryElement.style.display = 'block';
                 console.log('Added active class to:', targetCategory);
                 
                 // Use setTimeout to ensure the category is visible before manipulating its children
