@@ -366,34 +366,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Category Navigation and Project Showcase
+// Category Navigation Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Category navigation script loaded');
-    
-    // Category switching
     const categoryBtns = document.querySelectorAll('.category-btn');
     const projectCategories = document.querySelectorAll('.project-category');
     
-    console.log('Category buttons found:', categoryBtns.length);
-    console.log('Project categories found:', projectCategories.length);
-    
-    // Ensure Websites category is active by default
-    const websitesCategory = document.getElementById('websites-category');
-    const productsCategory = document.getElementById('products-category');
-    
-    if (websitesCategory && productsCategory) {
-        websitesCategory.classList.add('active');
-        productsCategory.classList.remove('active');
-        console.log('Set default active category: Websites');
-        
-        // Force initial state
-        websitesCategory.style.display = 'block';
-        productsCategory.style.display = 'none';
-    }
-    
     categoryBtns.forEach(btn => {
         btn.addEventListener('click', function() {
-            console.log('Category button clicked:', this.getAttribute('data-category'));
             const targetCategory = this.getAttribute('data-category');
             
             // Remove active class from all category buttons
@@ -404,84 +383,13 @@ document.addEventListener('DOMContentLoaded', function() {
             // Hide all project categories
             projectCategories.forEach(category => {
                 category.classList.remove('active');
-                category.style.display = 'none';
             });
             
             // Show target category
-            const targetCategoryElement = document.getElementById(targetCategory + '-category');
-            console.log('Target category element:', targetCategoryElement);
-            if (targetCategoryElement) {
-                // Force remove active from all categories first
-                projectCategories.forEach(category => {
-                    category.classList.remove('active');
-                    category.style.display = 'none';
-                });
-                
-                // Add active to target category
-                targetCategoryElement.classList.add('active');
-                targetCategoryElement.style.display = 'block';
-                console.log('Added active class to:', targetCategory);
-                
-                // Use setTimeout to ensure the category is visible before manipulating its children
-                setTimeout(() => {
-                    // Reset project navigation for the active category
-                    const projectNavBtns = targetCategoryElement.querySelectorAll('.project-nav-btn');
-                    const projectSlides = targetCategoryElement.querySelectorAll('.project-slide');
-                    
-                    console.log('Project nav buttons found:', projectNavBtns.length);
-                    console.log('Project slides found:', projectSlides.length);
-                    
-                    // Remove active from all projects
-                    projectNavBtns.forEach(btn => btn.classList.remove('active'));
-                    projectSlides.forEach(slide => slide.classList.remove('active'));
-                    
-                    // Activate first project
-                    if (projectNavBtns.length > 0) {
-                        projectNavBtns[0].classList.add('active');
-                        console.log('Activated first nav button');
-                    }
-                    if (projectSlides.length > 0) {
-                        projectSlides[0].classList.add('active');
-                        console.log('Activated first project slide');
-                    }
-                    
-                    // Update project counter
-                    const projectCounter = targetCategoryElement.querySelector('.project-counter .current-project');
-                    if (projectCounter) {
-                        projectCounter.textContent = '1';
-                    }
-                    
-                    // Force a reflow to ensure changes are applied
-                    targetCategoryElement.offsetHeight;
-                }, 50); // Increased delay to ensure DOM is fully updated
+            const targetElement = document.getElementById(targetCategory + '-category');
+            if (targetElement) {
+                targetElement.classList.add('active');
             }
-        });
-    });
-    
-    // Project navigation within each category
-    projectCategories.forEach(category => {
-        const projectNavBtns = category.querySelectorAll('.project-nav-btn');
-        const projectSlides = category.querySelectorAll('.project-slide');
-        const projectCounter = category.querySelector('.project-counter .current-project');
-        
-        projectNavBtns.forEach((btn, index) => {
-            btn.addEventListener('click', function() {
-                console.log('Project button clicked:', index);
-                // Remove active from all projects in this category
-                projectNavBtns.forEach(b => b.classList.remove('active'));
-                projectSlides.forEach(slide => slide.classList.remove('active'));
-                
-                // Add active to clicked project
-                this.classList.add('active');
-                if (projectSlides[index]) {
-                    projectSlides[index].classList.add('active');
-                }
-                
-                // Update project counter
-                if (projectCounter) {
-                    projectCounter.textContent = index + 1;
-                }
-            });
         });
     });
 });

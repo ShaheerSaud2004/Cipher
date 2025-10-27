@@ -473,6 +473,66 @@ footer {
     font-size: 0.9rem;
 }
 
+/* Category Navigation Styles */
+.category-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.category-btn {
+    padding: 12px 24px;
+    border: 2px solid #003366;
+    background: transparent;
+    color: #003366;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.category-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.category-btn:hover::before {
+    left: 100%;
+}
+
+.category-btn:hover {
+    background: #003366;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.3);
+}
+
+.category-btn.active {
+    background: #003366;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.3);
+}
+
+/* Project Category Styles */
+.project-category {
+    display: none;
+}
+
+.project-category.active {
+    display: block;
+}
+
 /* Past Work Section */
 .project-details {
     text-align: left;
@@ -3437,65 +3497,6 @@ h1::after, h2::after, h3::after {
     box-shadow: none;
     font-weight: inherit;
     color: inherit;
-}
-
-/* Category Navigation Styles */
-.category-navigation {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 40px;
-  padding: 20px 0;
-}
-
-.category-btn {
-  padding: 12px 30px;
-  border: 2px solid #003366;
-  background: transparent;
-  color: #003366;
-  font-size: 1.1rem;
-  font-weight: 700;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.category-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-  transition: left 0.5s ease;
-}
-
-.category-btn:hover::before {
-  left: 100%;
-}
-
-.category-btn.active {
-  background: linear-gradient(135deg, #003366 0%, #00509E 100%);
-  color: white;
-  box-shadow: 0 4px 15px rgba(0, 51, 102, 0.3);
-  transform: translateY(-2px);
-}
-
-.category-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 51, 102, 0.2);
-}
-
-/* Project Category Styles */
-.project-category {
-  display: none;
-}
-
-.project-category.active {
-  display: block;
 }
 
 /* Project Showcase System */
