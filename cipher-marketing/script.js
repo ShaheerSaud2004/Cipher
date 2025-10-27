@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const filterValue = button.getAttribute('data-filter');
 
-            portfolioItems.forEach(item => {
+            portfolioItems.forEach((item, index) => {
                 const itemCategory = item.getAttribute('data-category');
                 
                 if (filterValue === 'all' || itemCategory.includes(filterValue)) {
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     setTimeout(() => {
                         item.style.opacity = '1';
                         item.style.transform = 'translateY(0)';
-                    }, 100);
+                    }, 100 + (index * 50)); // Staggered animation
                 } else {
                     item.style.opacity = '0';
                     item.style.transform = 'translateY(20px)';
@@ -35,6 +35,34 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
+    });
+
+    // Portfolio overlay interactions
+    portfolioItems.forEach(item => {
+        const overlay = item.querySelector('.portfolio-overlay');
+        const image = item.querySelector('.portfolio-image');
+        
+        if (overlay && image) {
+            // Ensure overlay is properly positioned
+            overlay.style.position = 'absolute';
+            overlay.style.top = '0';
+            overlay.style.left = '0';
+            overlay.style.right = '0';
+            overlay.style.bottom = '0';
+            overlay.style.opacity = '0';
+            overlay.style.transition = 'opacity 0.3s ease';
+            
+            // Add click handler to portfolio item
+            item.addEventListener('click', (e) => {
+                // Only trigger if not clicking on buttons
+                if (!e.target.closest('.portfolio-btn')) {
+                    const expandBtn = item.querySelector('.portfolio-btn .fa-expand');
+                    if (expandBtn) {
+                        expandBtn.click();
+                    }
+                }
+            });
+        }
     });
 
     // Smooth Scrolling for Navigation Links
@@ -207,6 +235,171 @@ document.addEventListener('DOMContentLoaded', function() {
         
         item.addEventListener('mouseleave', () => {
             item.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+
+    // Portfolio button interactions
+    const portfolioButtons = document.querySelectorAll('.portfolio-btn');
+    
+    portfolioButtons.forEach(button => {
+        // Add keyboard support
+        button.setAttribute('tabindex', '0');
+        button.setAttribute('role', 'button');
+        
+        const handleClick = (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const icon = button.querySelector('i');
+            if (icon.classList.contains('fa-expand')) {
+                // Handle expand functionality
+                const portfolioItem = button.closest('.portfolio-item');
+                const image = portfolioItem.querySelector('img');
+                const iframe = portfolioItem.querySelector('iframe');
+                
+                if (image || iframe) {
+                    // Create a modal or lightbox effect
+                    const modal = document.createElement('div');
+                    modal.className = 'portfolio-modal';
+                    modal.style.cssText = `
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0, 0, 0, 0.95);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        z-index: 10000;
+                        cursor: pointer;
+                        opacity: 0;
+                        transition: opacity 0.3s ease;
+                    `;
+                    
+                    const modalContent = document.createElement('div');
+                    modalContent.style.cssText = `
+                        max-width: 90%;
+                        max-height: 90%;
+                        position: relative;
+                    `;
+                    
+                    if (image) {
+                        const modalImg = document.createElement('img');
+                        modalImg.src = image.src;
+                        modalImg.alt = image.alt;
+                        modalImg.style.cssText = `
+                            width: 100%;
+                            height: auto;
+                            max-height: 90vh;
+                            object-fit: contain;
+                            border-radius: 10px;
+                            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+                        `;
+                        modalContent.appendChild(modalImg);
+                    } else if (iframe) {
+                        const modalIframe = document.createElement('iframe');
+                        modalIframe.src = iframe.src + '&autoplay=1';
+                        modalIframe.style.cssText = `
+                            width: 90vw;
+                            height: 50vh;
+                            border: none;
+                            border-radius: 10px;
+                        `;
+                        modalContent.appendChild(modalIframe);
+                    }
+                    
+                    // Add close button
+                    const closeBtn = document.createElement('button');
+                    closeBtn.innerHTML = '×';
+                    closeBtn.style.cssText = `
+                        position: absolute;
+                        top: -40px;
+                        right: 0;
+                        background: rgba(255, 255, 255, 0.2);
+                        border: none;
+                        color: white;
+                        font-size: 24px;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transition: background 0.3s ease;
+                    `;
+                    
+                    closeBtn.addEventListener('mouseenter', () => {
+                        closeBtn.style.background = 'rgba(255, 255, 255, 0.3)';
+                    });
+                    
+                    closeBtn.addEventListener('mouseleave', () => {
+                        closeBtn.style.background = 'rgba(255, 255, 255, 0.2)';
+                    });
+                    
+                    modalContent.appendChild(closeBtn);
+                    modal.appendChild(modalContent);
+                    document.body.appendChild(modal);
+                    
+                    // Animate in
+                    setTimeout(() => {
+                        modal.style.opacity = '1';
+                    }, 10);
+                    
+                    // Close handlers
+                    const closeModal = () => {
+                        modal.style.opacity = '0';
+                        setTimeout(() => {
+                            if (document.body.contains(modal)) {
+                                document.body.removeChild(modal);
+                            }
+                        }, 300);
+                    };
+                    
+                    modal.addEventListener('click', closeModal);
+                    closeBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        closeModal();
+                    });
+                    
+                    // Keyboard support
+                    const handleKeydown = (e) => {
+                        if (e.key === 'Escape') {
+                            closeModal();
+                            document.removeEventListener('keydown', handleKeydown);
+                        }
+                    };
+                    document.addEventListener('keydown', handleKeydown);
+                }
+            } else if (icon.classList.contains('fa-heart')) {
+                // Handle like functionality
+                const isLiked = button.classList.contains('liked');
+                if (isLiked) {
+                    button.classList.remove('liked');
+                    button.style.color = 'white';
+                } else {
+                    button.classList.add('liked');
+                    button.style.color = '#ff6b6b';
+                }
+            } else if (icon.classList.contains('fa-play')) {
+                // Handle video play functionality
+                const portfolioItem = button.closest('.portfolio-item');
+                const iframe = portfolioItem.querySelector('iframe');
+                if (iframe) {
+                    iframe.src = iframe.src + '&autoplay=1';
+                }
+            }
+        };
+        
+        button.addEventListener('click', handleClick);
+        
+        // Keyboard support
+        button.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                handleClick(e);
+            }
         });
     });
 

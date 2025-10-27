@@ -366,30 +366,103 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Category Navigation Functionality
+// Project Filter Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    const categoryBtns = document.querySelectorAll('.category-btn');
-    const projectCategories = document.querySelectorAll('.project-category');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectNavButtons = document.querySelectorAll('.project-nav-btn');
+    const projectSlides = document.querySelectorAll('.project-slide');
+    const projectCounter = document.querySelector('.project-counter .total-projects');
     
-    categoryBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const targetCategory = this.getAttribute('data-category');
+    // Initialize filter functionality
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const category = this.getAttribute('data-category');
             
-            // Remove active class from all category buttons
-            categoryBtns.forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
+            // Update active filter button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
             
-            // Hide all project categories
-            projectCategories.forEach(category => {
-                category.classList.remove('active');
-            });
+            // Filter projects based on category
+            filterProjects(category);
+        });
+    });
+    
+    function filterProjects(category) {
+        let visibleProjects = 0;
+        let firstVisibleProject = null;
+        
+        // Filter project navigation buttons
+        projectNavButtons.forEach(button => {
+            const buttonCategory = button.getAttribute('data-category');
+            const shouldShow = category === 'all' || buttonCategory === category;
             
-            // Show target category
-            const targetElement = document.getElementById(targetCategory + '-category');
-            if (targetElement) {
-                targetElement.classList.add('active');
+            if (shouldShow) {
+                button.style.display = 'block';
+                visibleProjects++;
+                if (!firstVisibleProject) {
+                    firstVisibleProject = button;
+                }
+            } else {
+                button.style.display = 'none';
             }
+        });
+        
+        // Filter project slides
+        projectSlides.forEach(slide => {
+            const slideCategory = slide.getAttribute('data-category');
+            const shouldShow = category === 'all' || slideCategory === category;
+            
+            if (shouldShow) {
+                slide.style.display = 'block';
+            } else {
+                slide.style.display = 'none';
+                slide.classList.remove('active');
+            }
+        });
+        
+        // Update project counter
+        if (projectCounter) {
+            projectCounter.textContent = visibleProjects;
+        }
+        
+        // Activate first visible project
+        if (firstVisibleProject) {
+            const projectIndex = firstVisibleProject.getAttribute('data-project');
+            activateProject(projectIndex);
+        }
+    }
+    
+    function activateProject(projectIndex) {
+        // Remove active class from all navigation buttons
+        projectNavButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Remove active class from all slides
+        projectSlides.forEach(slide => slide.classList.remove('active'));
+        
+        // Add active class to selected navigation button
+        const activeNavBtn = document.querySelector(`[data-project="${projectIndex}"]`);
+        if (activeNavBtn) {
+            activeNavBtn.classList.add('active');
+        }
+        
+        // Add active class to selected slide
+        const activeSlide = document.querySelector(`.project-slide[data-project="${projectIndex}"]`);
+        if (activeSlide) {
+            activeSlide.classList.add('active');
+        }
+        
+        // Update project counter
+        const currentProjectSpan = document.querySelector('.project-counter .current-project');
+        if (currentProjectSpan) {
+            currentProjectSpan.textContent = parseInt(projectIndex) + 1;
+        }
+    }
+    
+    // Keep existing project navigation functionality
+    projectNavButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const projectIndex = this.getAttribute('data-project');
+            activateProject(projectIndex);
         });
     });
 });

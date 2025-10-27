@@ -1085,13 +1085,21 @@ body {
 .portfolio-image {
     position: relative;
     overflow: hidden;
+    height: 250px;
 }
 
 .portfolio-image img {
     width: 100%;
-    height: 250px;
+    height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+}
+
+.portfolio-image iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0;
 }
 
 .portfolio-item:hover .portfolio-image img {
@@ -1169,6 +1177,16 @@ body {
 .portfolio-btn:hover {
     background: rgba(255, 255, 255, 0.3);
     transform: scale(1.1);
+}
+
+.portfolio-btn.liked {
+    color: #ff6b6b !important;
+    background: rgba(255, 107, 107, 0.2);
+}
+
+.portfolio-btn:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
 }
 
 /* Clients Section */
@@ -1726,7 +1744,7 @@ body {
         gap: 1.5rem;
     }
 
-    .portfolio-filter {
+    .portfolio-filters {
         flex-wrap: wrap;
         justify-content: center;
         gap: 0.5rem;
