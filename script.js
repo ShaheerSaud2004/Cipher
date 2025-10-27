@@ -398,27 +398,35 @@ document.addEventListener('DOMContentLoaded', function() {
             if (targetCategoryElement) {
                 targetCategoryElement.classList.add('active');
                 
-                // Reset project navigation for the active category
-                const projectNavBtns = targetCategoryElement.querySelectorAll('.project-nav-btn');
-                const projectSlides = targetCategoryElement.querySelectorAll('.project-slide');
-                
-                // Remove active from all projects
-                projectNavBtns.forEach(btn => btn.classList.remove('active'));
-                projectSlides.forEach(slide => slide.classList.remove('active'));
-                
-                // Activate first project
-                if (projectNavBtns.length > 0) {
-                    projectNavBtns[0].classList.add('active');
-                }
-                if (projectSlides.length > 0) {
-                    projectSlides[0].classList.add('active');
-                }
-                
-                // Update project counter
-                const projectCounter = targetCategoryElement.querySelector('.project-counter .current-project');
-                if (projectCounter) {
-                    projectCounter.textContent = '1';
-                }
+                // Use setTimeout to ensure the category is visible before manipulating its children
+                setTimeout(() => {
+                    // Reset project navigation for the active category
+                    const projectNavBtns = targetCategoryElement.querySelectorAll('.project-nav-btn');
+                    const projectSlides = targetCategoryElement.querySelectorAll('.project-slide');
+                    
+                    console.log('Project nav buttons found:', projectNavBtns.length);
+                    console.log('Project slides found:', projectSlides.length);
+                    
+                    // Remove active from all projects
+                    projectNavBtns.forEach(btn => btn.classList.remove('active'));
+                    projectSlides.forEach(slide => slide.classList.remove('active'));
+                    
+                    // Activate first project
+                    if (projectNavBtns.length > 0) {
+                        projectNavBtns[0].classList.add('active');
+                        console.log('Activated first nav button');
+                    }
+                    if (projectSlides.length > 0) {
+                        projectSlides[0].classList.add('active');
+                        console.log('Activated first project slide');
+                    }
+                    
+                    // Update project counter
+                    const projectCounter = targetCategoryElement.querySelector('.project-counter .current-project');
+                    if (projectCounter) {
+                        projectCounter.textContent = '1';
+                    }
+                }, 10); // Small delay to ensure DOM is updated
             }
         });
     });
