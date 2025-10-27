@@ -365,3 +365,80 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Category Navigation and Project Showcase
+document.addEventListener('DOMContentLoaded', function() {
+    // Category switching
+    const categoryBtns = document.querySelectorAll('.category-btn');
+    const projectCategories = document.querySelectorAll('.project-category');
+    
+    categoryBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const targetCategory = this.getAttribute('data-category');
+            
+            // Remove active class from all category buttons
+            categoryBtns.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Hide all project categories
+            projectCategories.forEach(category => {
+                category.classList.remove('active');
+            });
+            
+            // Show target category
+            const targetCategoryElement = document.getElementById(targetCategory + '-category');
+            if (targetCategoryElement) {
+                targetCategoryElement.classList.add('active');
+                
+                // Reset project navigation for the active category
+                const projectNavBtns = targetCategoryElement.querySelectorAll('.project-nav-btn');
+                const projectSlides = targetCategoryElement.querySelectorAll('.project-slide');
+                
+                // Remove active from all projects
+                projectNavBtns.forEach(btn => btn.classList.remove('active'));
+                projectSlides.forEach(slide => slide.classList.remove('active'));
+                
+                // Activate first project
+                if (projectNavBtns.length > 0) {
+                    projectNavBtns[0].classList.add('active');
+                }
+                if (projectSlides.length > 0) {
+                    projectSlides[0].classList.add('active');
+                }
+                
+                // Update project counter
+                const projectCounter = targetCategoryElement.querySelector('.project-counter .current-project');
+                if (projectCounter) {
+                    projectCounter.textContent = '1';
+                }
+            }
+        });
+    });
+    
+    // Project navigation within each category
+    projectCategories.forEach(category => {
+        const projectNavBtns = category.querySelectorAll('.project-nav-btn');
+        const projectSlides = category.querySelectorAll('.project-slide');
+        const projectCounter = category.querySelector('.project-counter .current-project');
+        
+        projectNavBtns.forEach((btn, index) => {
+            btn.addEventListener('click', function() {
+                // Remove active from all projects in this category
+                projectNavBtns.forEach(b => b.classList.remove('active'));
+                projectSlides.forEach(slide => slide.classList.remove('active'));
+                
+                // Add active to clicked project
+                this.classList.add('active');
+                if (projectSlides[index]) {
+                    projectSlides[index].classList.add('active');
+                }
+                
+                // Update project counter
+                if (projectCounter) {
+                    projectCounter.textContent = index + 1;
+                }
+            });
+        });
+    });
+});

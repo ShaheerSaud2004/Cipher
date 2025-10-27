@@ -482,18 +482,24 @@
     <section id="past-work" class="section">
         <div class="container">
             <h2>Past Work</h2>
-            <div class="project-showcase">
-                <div class="project-navigation">
-                    <button class="project-nav-btn active" data-project="0">Z&Z Renewable</button>
-                    <button class="project-nav-btn" data-project="1">Ara's Hot Chicken</button>
-                    <button class="project-nav-btn" data-project="2">Bergen's Promise</button>
-                    <button class="project-nav-btn" data-project="3">Rutgers MSA Website</button>
-                    <button class="project-nav-btn" data-project="4">Instagram Bot</button>
-                    <button class="project-nav-btn" data-project="5">MSA Treasury System</button>
-                    <button class="project-nav-btn" data-project="6">LoanTicks Platform</button>
-                </div>
-                
-                <div class="project-container">
+            
+            <!-- Category Navigation -->
+            <div class="category-navigation">
+                <button class="category-btn active" data-category="websites">Websites</button>
+                <button class="category-btn" data-category="products">Products</button>
+            </div>
+            
+            <!-- Websites Category -->
+            <div class="project-category active" id="websites-category">
+                <div class="project-showcase">
+                    <div class="project-navigation">
+                        <button class="project-nav-btn active" data-project="0">Z&Z Renewable</button>
+                        <button class="project-nav-btn" data-project="1">Ara's Hot Chicken</button>
+                        <button class="project-nav-btn" data-project="2">Bergen's Promise</button>
+                        <button class="project-nav-btn" data-project="3">Rutgers MSA Website</button>
+                    </div>
+                    
+                    <div class="project-container">
                     <!-- Project 1: Z&Z Renewable (now first) -->
                     <div class="project-slide active" data-project="0">
                         <div class="project-flex-group">
@@ -739,57 +745,157 @@
                         </div>
                     </div>
                     
-                    <!-- Project 7: LoanTicks Platform -->
-                    <div class="project-slide" data-project="6">
-                        <div class="project-flex-group">
-                            <div class="work-item">
-                                <h3 class="app-related">LoanTicks: Mortgage Loan Management Platform</h3>
-                                <p class="app-related">Developed a comprehensive full-stack mortgage loan management platform featuring role-based dashboards, URLA 2019 compliant application forms, automated rate calculations, document verification workflows, and third-party integrations to streamline the entire mortgage lending process from application to decision.</p>
-                                <a href="#" class="website-link">Visit Website</a>
-                                <a href="#" class="website-link">View Demo</a>
-                                <a href="#" class="website-link">GitHub</a>
-                                <!-- Key highlights list -->
-                                <ul class="project-details">
-                                    <li class="app-related"><strong>Multi-Role Dashboard System:</strong> Customer, employee, and admin interfaces with role-based access control and personalized workflows.</li>
-                                    <li class="app-related"><strong>URLA 2019 Compliant Forms:</strong> Complete 1003 application with all required fields and validation for regulatory compliance.</li>
-                                    <li class="app-related"><strong>Document Verification:</strong> Dual-screen comparison with fullscreen preview for accurate document processing.</li>
-                                    <li class="app-related"><strong>ARIVE Integration:</strong> Embedded third-party POS for seamless submissions and workflow automation.</li>
-                                    <li class="app-related"><strong>Financial Analysis:</strong> Real-time LTV, DTI, and PITI calculations with automated rate determinations.</li>
-                                    <li class="app-related"><strong>Automated Testing:</strong> 100+ comprehensive tests for reliability and quality assurance.</li>
-                                </ul>
-                                <!-- Screenshots for visualization -->
-                                <div class="project-images">
-                                    <figure>
-                                        <img src="cipher-marketing/images/LOANTICKShomescreen.png" alt="LoanTicks Home Screen" class="project-image">
-                                        <figcaption>LoanTicks Home Screen & Dashboard</figcaption>
-                                    </figure>
-                                    <figure>
-                                        <img src="cipher-marketing/images/LOANTICKSCUSTOMER.png" alt="LoanTicks Customer Interface" class="project-image">
-                                        <figcaption>Customer Portal & Application Interface</figcaption>
-                                    </figure>
+                    <!-- Project Counter for Websites -->
+                    <div class="project-counter">
+                        <span class="current-project">1</span> / <span class="total-projects">4</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Products Category -->
+            <div class="project-category" id="products-category">
+                <div class="project-showcase">
+                    <div class="project-navigation">
+                        <button class="project-nav-btn active" data-project="0">Instagram Bot</button>
+                        <button class="project-nav-btn" data-project="1">MSA Treasury System</button>
+                        <button class="project-nav-btn" data-project="2">LoanTicks Platform</button>
+                    </div>
+                    
+                    <div class="project-container">
+                        <!-- Project 1: Instagram Event Monitor Bot -->
+                        <div class="project-slide active" data-project="0">
+                            <div class="project-flex-group">
+                                <div class="work-item">
+                                    <h3 class="automation-related">Instagram Event Monitor Bot: Automated Event Management</h3>
+                                    <p class="ai-related automation-related">Developed an automated bot that monitors Instagram for upcoming events and sends automated messages across multiple chat platforms to keep communities informed.</p>
+                                    <!-- Key highlights list -->
+                                    <ul class="project-details">
+                                        <li class="ai-related automation-related"><strong>Instagram API Integration:</strong> <span class="ai-related automation-related">Automated monitoring of Instagram accounts for event announcements and updates using advanced API integration.</span></li>
+                                        <li class="automation-related"><strong>Multi-Platform Messaging:</strong> Automated message distribution across multiple chat platforms including Discord, Slack, and WhatsApp.</li>
+                                        <li class="ai-related automation-related"><strong>Event Detection:</strong> <span class="ai-related automation-related">Intelligent event detection using natural language processing to identify upcoming events from posts and stories.</span></li>
+                                        <li class="automation-related"><strong>Automated Notifications:</strong> Real-time notifications sent to multiple chat groups when events are detected, ensuring community members stay informed.</li>
+                                    </ul>
+                                    <!-- Screenshots for visualization -->
+                                    <div class="project-images">
+                                        <figure>
+                                            <img src="images/instagram-bot.png" alt="Instagram Bot Dashboard" class="project-image">
+                                            <figcaption>Bot Dashboard & Monitoring</figcaption>
+                                        </figure>
+                                        <figure>
+                                            <img src="images/chat-notifications.png" alt="Automated Chat Notifications" class="project-image">
+                                            <figcaption>Automated Chat Notifications</figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="work-stats-panel" data-aos="fade-left" data-aos-delay="200">
+                                    <div class="work-stats-title">Project Impact</div>
+                                    <div class="work-stats-summary">Automated event monitoring and notification system that keeps communities informed about upcoming events without manual intervention.</div>
+                                    <div class="work-stats-divider"></div>
+                                    <ul class="work-stats-list">
+                                        <li><span class="work-stat-icon">👁️</span> <span class="work-stat-value countup" data-count="24">0</span>/7 Monitoring</li>
+                                        <li><span class="work-stat-icon">📱</span> <span class="work-stat-value countup" data-count="5">0</span>+ Chat Platforms</li>
+                                        <li><span class="work-stat-icon">⚡</span> <span class="work-stat-value countup" data-count="100">0</span>% Automation</li>
+                                        <li><span class="work-stat-icon">🎯</span> <span class="work-stat-value countup" data-count="95">0</span>% Accuracy</li>
+                                    </ul>
+                                    <a href="#" class="work-pdf-btn" target="_blank">View Documentation</a>
                                 </div>
                             </div>
-                            <div class="work-stats-panel" data-aos="fade-left" data-aos-delay="200">
-                                <div class="work-stats-title">Project Impact</div>
-                                <div class="work-stats-summary">A complete digital mortgage solution designed to streamline lending operations, ensure compliance, and accelerate loan approvals through intelligent automation and modern UX design.</div>
-                                <div class="work-stats-divider"></div>
-                                <ul class="work-stats-list">
-                                    <li><span class="work-stat-icon">🏦</span> <span class="work-stat-value countup" data-count="100">0</span>% URLA Compliance</li>
-                                    <li><span class="work-stat-icon">⚡</span> <span class="work-stat-value countup" data-count="75">0</span>% Faster Processing</li>
-                                    <li><span class="work-stat-icon">🔒</span> <span class="work-stat-value countup" data-count="100">0</span>% Secure Transactions</li>
-                                    <li><span class="work-stat-icon">📊</span> <span class="work-stat-value countup" data-count="100">0</span>+ Test Coverage</li>
-                                </ul>
-                                <div class="tech-stack">
-                                    <strong>Tech Stack:</strong> Next.js • TypeScript • MongoDB • NextAuth • Tailwind CSS • Vercel
+                        </div>
+                        
+                        <!-- Project 2: MSA Treasury System -->
+                        <div class="project-slide" data-project="1">
+                            <div class="project-flex-group">
+                                <div class="work-item">
+                                    <h3 class="app-related">MSA Treasury System: Full-Stack Financial Management</h3>
+                                    <p class="app-related">Full-stack application that integrates with Rutgers systems for automated reimbursements and comprehensive financial management for student organizations.</p>
+                                    <a href="#" class="website-link">View System</a>
+                                    <!-- Key highlights list -->
+                                    <ul class="project-details">
+                                        <li class="app-related"><strong>Rutgers API Integration:</strong> Seamless integration with Rutgers University systems for student verification and financial processing.</li>
+                                        <li class="automation-related"><strong>Automated Reimbursements:</strong> <span class="automation-related">Automated reimbursement processing that reduces manual work and ensures timely payments to students.</span></li>
+                                        <li class="app-related"><strong>Financial Analytics:</strong> Comprehensive dashboard with spending analytics, budget tracking, and financial reporting for organization leaders.</li>
+                                        <li class="cybersecurity-related"><strong>Secure Transactions:</strong> <span class="cybersecurity-related">Bank-level security for all financial transactions with audit trails and compliance monitoring.</span></li>
+                                        <li class="app-related"><strong>User Management:</strong> Role-based access control for treasurers, officers, and members with appropriate permission levels.</li>
+                                    </ul>
+                                    <!-- Screenshots for visualization -->
+                                    <div class="project-images">
+                                        <figure>
+                                            <img src="cipher-marketing/images/MsaTreasuer.png" alt="MSA Treasury Dashboard" class="project-image">
+                                            <figcaption>Financial Dashboard & Analytics</figcaption>
+                                        </figure>
+                                        <figure>
+                                            <img src="cipher-marketing/images/MsaTresurer p2.png" alt="MSA Treasury System Interface" class="project-image">
+                                            <figcaption>User Interface & Management System</figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="work-stats-panel" data-aos="fade-left" data-aos-delay="200">
+                                    <div class="work-stats-title">Project Impact</div>
+                                    <div class="work-stats-summary">A comprehensive financial management system that streamlines treasury operations and provides transparency for student organizations.</div>
+                                    <div class="work-stats-divider"></div>
+                                    <ul class="work-stats-list">
+                                        <li><span class="work-stat-icon">💰</span> <span class="work-stat-value countup" data-count="90">0</span>% Faster Reimbursements</li>
+                                        <li><span class="work-stat-icon">📊</span> <span class="work-stat-value countup" data-count="100">0</span>% Financial Transparency</li>
+                                        <li><span class="work-stat-icon">🔒</span> <span class="work-stat-value countup" data-count="100">0</span>% Secure Transactions</li>
+                                        <li><span class="work-stat-icon">⚡</span> <span class="work-stat-value countup" data-count="75">0</span>% Time Savings</li>
+                                    </ul>
+                                    <a href="#" class="work-pdf-btn">View System</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Project 3: LoanTicks Platform -->
+                        <div class="project-slide" data-project="2">
+                            <div class="project-flex-group">
+                                <div class="work-item">
+                                    <h3 class="app-related">LoanTicks: Mortgage Loan Management Platform</h3>
+                                    <p class="app-related">Developed a comprehensive full-stack mortgage loan management platform featuring role-based dashboards, URLA 2019 compliant application forms, automated rate calculations, document verification workflows, and third-party integrations to streamline the entire mortgage lending process from application to decision.</p>
+                                    <a href="#" class="website-link">Visit Website</a>
+                                    <a href="#" class="website-link">View Demo</a>
+                                    <a href="#" class="website-link">GitHub</a>
+                                    <!-- Key highlights list -->
+                                    <ul class="project-details">
+                                        <li class="app-related"><strong>Multi-Role Dashboard System:</strong> Customer, employee, and admin interfaces with role-based access control and personalized workflows.</li>
+                                        <li class="app-related"><strong>URLA 2019 Compliant Forms:</strong> Complete 1003 application with all required fields and validation for regulatory compliance.</li>
+                                        <li class="app-related"><strong>Document Verification:</strong> Dual-screen comparison with fullscreen preview for accurate document processing.</li>
+                                        <li class="app-related"><strong>ARIVE Integration:</strong> Embedded third-party POS for seamless submissions and workflow automation.</li>
+                                        <li class="app-related"><strong>Financial Analysis:</strong> Real-time LTV, DTI, and PITI calculations with automated rate determinations.</li>
+                                        <li class="app-related"><strong>Automated Testing:</strong> 100+ comprehensive tests for reliability and quality assurance.</li>
+                                    </ul>
+                                    <!-- Screenshots for visualization -->
+                                    <div class="project-images">
+                                        <figure>
+                                            <img src="cipher-marketing/images/LOANTICKShomescreen.png" alt="LoanTicks Home Screen" class="project-image">
+                                            <figcaption>LoanTicks Home Screen & Dashboard</figcaption>
+                                        </figure>
+                                        <figure>
+                                            <img src="cipher-marketing/images/LOANTICKSCUSTOMER.png" alt="LoanTicks Customer Interface" class="project-image">
+                                            <figcaption>Customer Portal & Application Interface</figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="work-stats-panel" data-aos="fade-left" data-aos-delay="200">
+                                    <div class="work-stats-title">Project Impact</div>
+                                    <div class="work-stats-summary">A complete digital mortgage solution designed to streamline lending operations, ensure compliance, and accelerate loan approvals through intelligent automation and modern UX design.</div>
+                                    <div class="work-stats-divider"></div>
+                                    <ul class="work-stats-list">
+                                        <li><span class="work-stat-icon">🏦</span> <span class="work-stat-value countup" data-count="100">0</span>% URLA Compliance</li>
+                                        <li><span class="work-stat-icon">⚡</span> <span class="work-stat-value countup" data-count="75">0</span>% Faster Processing</li>
+                                        <li><span class="work-stat-icon">🔒</span> <span class="work-stat-value countup" data-count="100">0</span>% Secure Transactions</li>
+                                        <li><span class="work-stat-icon">📊</span> <span class="work-stat-value countup" data-count="100">0</span>+ Test Coverage</li>
+                                    </ul>
+                                    <div class="tech-stack">
+                                        <strong>Tech Stack:</strong> Next.js • TypeScript • MongoDB • NextAuth • Tailwind CSS • Vercel
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Project Counter -->
-                <div class="project-counter">
-                    <span class="current-project">1</span> / <span class="total-projects">7</span>
+                    
+                    <!-- Project Counter for Products -->
+                    <div class="project-counter">
+                        <span class="current-project">1</span> / <span class="total-projects">3</span>
+                    </div>
                 </div>
             </div>
         </div>
