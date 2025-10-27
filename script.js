@@ -377,6 +377,16 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Category buttons found:', categoryBtns.length);
     console.log('Project categories found:', projectCategories.length);
     
+    // Ensure Websites category is active by default
+    const websitesCategory = document.getElementById('websites-category');
+    const productsCategory = document.getElementById('products-category');
+    
+    if (websitesCategory && productsCategory) {
+        websitesCategory.classList.add('active');
+        productsCategory.classList.remove('active');
+        console.log('Set default active category: Websites');
+    }
+    
     categoryBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             console.log('Category button clicked:', this.getAttribute('data-category'));
@@ -396,7 +406,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetCategoryElement = document.getElementById(targetCategory + '-category');
             console.log('Target category element:', targetCategoryElement);
             if (targetCategoryElement) {
+                // Force remove active from all categories first
+                projectCategories.forEach(category => {
+                    category.classList.remove('active');
+                });
+                
+                // Add active to target category
                 targetCategoryElement.classList.add('active');
+                console.log('Added active class to:', targetCategory);
                 
                 // Use setTimeout to ensure the category is visible before manipulating its children
                 setTimeout(() => {
@@ -426,7 +443,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (projectCounter) {
                         projectCounter.textContent = '1';
                     }
-                }, 10); // Small delay to ensure DOM is updated
+                    
+                    // Force a reflow to ensure changes are applied
+                    targetCategoryElement.offsetHeight;
+                }, 50); // Increased delay to ensure DOM is fully updated
             }
         });
     });
