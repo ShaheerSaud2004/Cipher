@@ -368,12 +368,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Category Navigation and Project Showcase
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Category navigation script loaded');
+    
     // Category switching
     const categoryBtns = document.querySelectorAll('.category-btn');
     const projectCategories = document.querySelectorAll('.project-category');
     
+    console.log('Category buttons found:', categoryBtns.length);
+    console.log('Project categories found:', projectCategories.length);
+    
     categoryBtns.forEach(btn => {
         btn.addEventListener('click', function() {
+            console.log('Category button clicked:', this.getAttribute('data-category'));
             const targetCategory = this.getAttribute('data-category');
             
             // Remove active class from all category buttons
@@ -388,6 +394,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Show target category
             const targetCategoryElement = document.getElementById(targetCategory + '-category');
+            console.log('Target category element:', targetCategoryElement);
             if (targetCategoryElement) {
                 targetCategoryElement.classList.add('active');
                 
@@ -424,6 +431,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         projectNavBtns.forEach((btn, index) => {
             btn.addEventListener('click', function() {
+                console.log('Project button clicked:', index);
                 // Remove active from all projects in this category
                 projectNavBtns.forEach(b => b.classList.remove('active'));
                 projectSlides.forEach(slide => slide.classList.remove('active'));
