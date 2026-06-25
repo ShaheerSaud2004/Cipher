@@ -89,13 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
     
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-        } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            navbar.style.boxShadow = 'none';
-        }
+        navbar.classList.toggle('scrolled', window.scrollY > 100);
     });
 
     // Intersection Observer for Animations
@@ -169,6 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', navMenu.classList.contains('active') ? 'true' : 'false');
         });
 
         // Close menu when clicking a nav link (mobile)
@@ -176,6 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', navMenu.classList.contains('active') ? 'true' : 'false');
             });
         });
 
@@ -184,6 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', navMenu.classList.contains('active') ? 'true' : 'false');
             }
         });
     }
@@ -223,19 +220,6 @@ document.addEventListener('DOMContentLoaded', function() {
             };
             typeWriter();
         }, index * 800);
-    });
-
-    // Add hover effects to portfolio items
-    const portfolioImages = document.querySelectorAll('.portfolio-item');
-    
-    portfolioImages.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            item.style.transform = 'translateY(-10px) scale(1.02)';
-        });
-        
-        item.addEventListener('mouseleave', () => {
-            item.style.transform = 'translateY(0) scale(1)';
-        });
     });
 
     // Portfolio button interactions

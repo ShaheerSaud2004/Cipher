@@ -49,56 +49,6 @@ function slowScrollTo(targetY, duration) {
     requestAnimationFrame(step);
 }
 
-// AJAX Formspree submission with feedback
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-  contactForm.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const formStatus = document.getElementById('form-status');
-    const submitBtn = document.querySelector('.submit-btn');
-    const btnText = submitBtn.querySelector('.btn-text');
-    const btnIcon = submitBtn.querySelector('i');
-    formStatus.innerHTML = '<span class="status-icon"><i class="fas fa-spinner fa-spin"></i></span> Sending message...';
-    formStatus.className = 'form-status';
-    submitBtn.disabled = true;
-    btnText.textContent = 'Sending...';
-    btnIcon.style.transform = 'translateX(8px)';
-
-    const formData = new FormData(contactForm);
-    try {
-      const response = await fetch(contactForm.action, {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      });
-      if (response.ok) {
-        formStatus.innerHTML = '<span class="status-icon"><i class="fas fa-check-circle"></i></span> Thank you! Your message was sent successfully. We\'ll be in touch soon.';
-        formStatus.className = 'form-status success';
-        contactForm.reset();
-        submitBtn.style.background = '#1e7e34';
-        btnText.textContent = 'Sent!';
-        btnIcon.className = 'fas fa-check';
-        setTimeout(() => {
-          submitBtn.disabled = false;
-          submitBtn.style.background = '#003366';
-          btnText.textContent = 'Send Message';
-          btnIcon.className = 'fas fa-paper-plane';
-          btnIcon.style.transform = '';
-          formStatus.innerHTML = '';
-        }, 3000);
-      } else {
-        throw new Error('Failed to send');
-      }
-    } catch (err) {
-      formStatus.innerHTML = '<span class="status-icon"><i class="fas fa-times-circle"></i></span> Failed to send the message. Please try again.';
-      formStatus.className = 'form-status error';
-      submitBtn.disabled = false;
-      btnText.textContent = 'Send Message';
-      btnIcon.style.transform = '';
-    }
-  });
-}
-
 // Remove ripple effect for service cards
 // document.querySelectorAll('.service-tile').forEach(card => {
 //   card.addEventListener('click', function(e) {
@@ -113,13 +63,21 @@ if (contactForm) {
 //   });
 // });
 
-// Flip service cards on click with flip flash effect
+// Flip service cards on click/keyboard with flip flash effect
 document.querySelectorAll('.service-tile.flippable').forEach(card => {
-  card.addEventListener('click', function(e) {
-    // Flip on any click, including the indicator
-    card.classList.toggle('flipped');
+  function flip() {
+    const flipped = card.classList.toggle('flipped');
+    card.setAttribute('aria-expanded', flipped ? 'true' : 'false');
     card.classList.add('flip-flash');
     setTimeout(() => card.classList.remove('flip-flash'), 350);
+  }
+  card.addEventListener('click', flip);
+  // Keyboard support: Enter / Space toggle the flip (cards are role="button" tabindex="0")
+  card.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+      e.preventDefault();
+      flip();
+    }
   });
 });
 
@@ -262,17 +220,6 @@ document.addEventListener('DOMContentLoaded', function() {
         chatbotToggleBtn.style.display = 'flex';
     }
     
-    // Initialize EmailJS
-    // To set up EmailJS:
-    // 1. Go to https://www.emailjs.com/ and create a free account
-    // 2. Create an email service (Gmail, Outlook, etc.)
-    // 3. Create an email template
-    // 4. Get your Public Key, Service ID, and Template ID
-    // 5. Uncomment and update the line below with your Public Key
-    // 6. Update the service ID and template ID in the send function below
-    
-    // emailjs.init("YOUR_PUBLIC_KEY"); // Add your EmailJS public key here
-    
     // Toggle chatbot visibility
     function toggleChatbot() {
         if (!chatbotWidget) return;
@@ -393,7 +340,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Check for pricing
         if (message.match(/(price|cost|pricing|how much|budget|afford)/)) {
-            addMessage("Great question! We have transparent pricing:\n\n• Shopify Websites: $150-$500 (includes full frontend, backend, and 1 month free support)\n• Business Websites: $100-$700 (most commonly $150)\n• Custom Apps: Custom pricing based on requirements\n\nCheck out our Pricing section above for full details, or schedule a free consultation to discuss your specific project!", true, true);
+            addMessage("Great question! Pricing depends on your project's scope and features, so we keep it simple — every quote is tailored to what you actually need.\n\n• Shopify Websites — full frontend, backend & 1 month free support\n• Business Websites — custom design, SEO & lead generation\n• Custom Apps — scoped to your requirements\n\nThe best next step is a free consultation so we can give you an exact quote. Want me to set that up?", true, true);
             return null; // Return null to prevent default message
         }
         
@@ -405,7 +352,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Check for portfolio/past work
         if (message.match(/(portfolio|past work|examples|projects|show|see|previous|work)/)) {
-            return "Great question! We've built websites for businesses like Ara's Hot Chicken (e-commerce), Z&Z Renewable (solar company), and Shopify stores like Mxtivoanal. You can see all our past work in the 'Past Work' section above. Would you like to know more about any specific project?";
+            return "Great question! We've built websites for businesses like Ara's Hot Chicken (e-commerce), Z&Z Renewable (solar company), and Shopify stores like Mxtivational. You can see all our past work in the 'Past Work' section above. Would you like to know more about any specific project?";
         }
         
         // Check for timeline
@@ -487,39 +434,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Send email via EmailJS
-            const templateParams = {
-                from_name: name,
-                from_email: email,
-                message: message,
-                to_email: 'shaheersaud2004@gmail.com'
-            };
-            
-            // EmailJS Configuration
-            // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual IDs from EmailJS dashboard
-            // If EmailJS is not set up, it will fall back to mailto link
-            if (typeof emailjs !== 'undefined' && emailjs.send) {
-                emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
-                .then(function(response) {
-                    addMessage("Thank you! Your message has been sent. We'll get back to you soon! 📧", true);
-                    document.getElementById('contact-name').value = '';
-                    document.getElementById('contact-email').value = '';
-                    document.getElementById('contact-message').value = '';
-                    hideContactForm();
-                }, function(error) {
-                    // Fallback: Use mailto link if EmailJS fails
-                    const mailtoLink = `mailto:shaheersaud2004@gmail.com?subject=Contact from Website&body=Name: ${name}%0AEmail: ${email}%0A%0AMessage: ${message}`;
-                    window.location.href = mailtoLink;
-                    addMessage("Opening your email client to send the message...", true);
-                    hideContactForm();
-                });
-            } else {
-                // Fallback: Use mailto link if EmailJS is not configured
-                const mailtoLink = `mailto:shaheersaud2004@gmail.com?subject=Contact from Website&body=Name: ${name}%0AEmail: ${email}%0A%0AMessage: ${message}`;
-                window.location.href = mailtoLink;
-                addMessage("Opening your email client to send the message...", true);
-                hideContactForm();
-            }
+            // Open the visitor's email client pre-filled with their message
+            const subject = encodeURIComponent('Contact from Cipher Consulting website');
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage: ${message}`);
+            window.location.href = `mailto:shaheersaud2004@gmail.com?subject=${subject}&body=${body}`;
+            addMessage("Opening your email client so you can send the message. You can also reach us anytime at shaheersaud2004@gmail.com or (732) 314-8699. 📧", true);
+            document.getElementById('contact-name').value = '';
+            document.getElementById('contact-email').value = '';
+            document.getElementById('contact-message').value = '';
+            hideContactForm();
         });
     }
     

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>document.documentElement.classList.add('js')</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cipher Marketing | Event Photography & Visual Storytelling Services | East Brunswick, NJ</title>
@@ -46,8 +47,8 @@
     <meta name="twitter:creator" content="@shaheersaud">
     
     <!-- Additional SEO Meta Tags -->
-    <meta name="theme-color" content="#6366f1">
-    <meta name="msapplication-TileColor" content="#6366f1">
+    <meta name="theme-color" content="#6D5DF5">
+    <meta name="msapplication-TileColor" content="#6D5DF5">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Cipher Marketing">
@@ -65,7 +66,7 @@
             <div class="nav-logo">
                 <span class="logo-text">Cipher</span>
             </div>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="#hero" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#team" class="nav-link">Team</a></li>
@@ -74,11 +75,11 @@
                 <li><a href="#clients" class="nav-link">Clients</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="hamburger">
+            <button class="hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-menu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
@@ -224,9 +225,9 @@
                         <img src="images/NabhanImage.jpeg" alt="Nabhan Mazid">
                         <div class="member-overlay">
                             <div class="social-links">
-                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                                <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                                <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                                <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                                <a href="#" class="social-link" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -270,9 +271,9 @@
                         <img src="../ayesha123.png" alt="Ayesha Khan">
                         <div class="member-overlay">
                             <div class="social-links">
-                                <a href="mailto:ayeshanafisk@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
-                                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                                <a href="tel:9083316443" class="social-link"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:ayeshanafisk@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                                <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                                <a href="tel:9083316443" class="social-link" aria-label="Phone"><i class="fas fa-phone" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -331,7 +332,7 @@
                 <p class="section-subtitle">No fancy jargon – just the real services that help your organization look good and connect with people</p>
             </div>
         <div class="services-grid">
-                <div class="service-card premium">
+                <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-camera-retro"></i>
                     </div>
@@ -342,10 +343,10 @@
                         <li>Portrait Sessions</li>
                         <li>Lifestyle Shots</li>
                     </ul>
-                                         <div class="service-price">Starting at $50<br><small>*Depends on event size & needs</small></div>
+                                         <div class="service-price">Contact for pricing</div>
                  </div>
  
-                 <div class="service-card premium">
+                 <div class="service-card">
                      <div class="service-icon">
                          <i class="fas fa-video"></i>
                      </div>
@@ -357,10 +358,10 @@
                          <li>Interview Videos</li>
                          <li>Social Media Content</li>
                      </ul>
-                     <div class="service-price">Starting at $75<br><small>*Depends on video length & complexity</small></div>
+                     <div class="service-price">Contact for pricing</div>
                  </div>
  
-                 <div class="service-card premium">
+                 <div class="service-card">
                      <div class="service-icon">
                          <i class="fas fa-film"></i>
                      </div>
@@ -372,7 +373,7 @@
                          <li>Community Features</li>
                          <li>Testimonial Videos</li>
                      </ul>
-                     <div class="service-price">Starting at $125<br><small>*Depends on story complexity</small></div>
+                     <div class="service-price">Contact for pricing</div>
                  </div>
  
                  <div class="service-card">
@@ -387,7 +388,7 @@
                          <li>Story Templates</li>
                          <li>Content Planning</li>
                      </ul>
-                     <div class="service-price">Starting at $25<br><small>*Depends on content amount</small></div>
+                     <div class="service-price">Contact for pricing</div>
                  </div>
  
                  <div class="service-card">
@@ -402,7 +403,7 @@
                          <li>Color Correction</li>
                          <li>Basic Effects</li>
                      </ul>
-                     <div class="service-price">Starting at $20<br><small>*Depends on editing complexity</small></div>
+                     <div class="service-price">Contact for pricing</div>
                  </div>
  
                  <div class="service-card">
@@ -417,7 +418,7 @@
                          <li>Visual Consistency</li>
                          <li>Engagement Strategy</li>
                      </ul>
-                     <div class="service-price">Starting at $60<br><small>*Depends on strategy depth</small></div>
+                     <div class="service-price">Contact for pricing</div>
                 </div>
             </div>
         </div>
@@ -452,8 +453,8 @@
                                 </div>
                             </div>
                             <div class="portfolio-actions">
-                                <button class="portfolio-btn"><i class="fas fa-expand"></i></button>
-                                <button class="portfolio-btn"><i class="fas fa-heart"></i></button>
+                                <button class="portfolio-btn" aria-label="View larger"><i class="fas fa-expand" aria-hidden="true"></i></button>
+                                <button class="portfolio-btn" aria-label="Like"><i class="fas fa-heart" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
@@ -471,8 +472,8 @@
                                 </div>
                             </div>
                             <div class="portfolio-actions">
-                                <button class="portfolio-btn"><i class="fas fa-expand"></i></button>
-                                <button class="portfolio-btn"><i class="fas fa-heart"></i></button>
+                                <button class="portfolio-btn" aria-label="View larger"><i class="fas fa-expand" aria-hidden="true"></i></button>
+                                <button class="portfolio-btn" aria-label="Like"><i class="fas fa-heart" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
@@ -490,8 +491,8 @@
                                 </div>
                             </div>
                             <div class="portfolio-actions">
-                                <button class="portfolio-btn"><i class="fas fa-expand"></i></button>
-                                <button class="portfolio-btn"><i class="fas fa-heart"></i></button>
+                                <button class="portfolio-btn" aria-label="View larger"><i class="fas fa-expand" aria-hidden="true"></i></button>
+                                <button class="portfolio-btn" aria-label="Like"><i class="fas fa-heart" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
@@ -509,8 +510,8 @@
                                 </div>
                             </div>
                             <div class="portfolio-actions">
-                                <button class="portfolio-btn"><i class="fas fa-expand"></i></button>
-                                <button class="portfolio-btn"><i class="fas fa-heart"></i></button>
+                                <button class="portfolio-btn" aria-label="View larger"><i class="fas fa-expand" aria-hidden="true"></i></button>
+                                <button class="portfolio-btn" aria-label="Like"><i class="fas fa-heart" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
@@ -528,8 +529,8 @@
                                 </div>
                             </div>
                             <div class="portfolio-actions">
-                                <button class="portfolio-btn"><i class="fas fa-expand"></i></button>
-                                <button class="portfolio-btn"><i class="fas fa-heart"></i></button>
+                                <button class="portfolio-btn" aria-label="View larger"><i class="fas fa-expand" aria-hidden="true"></i></button>
+                                <button class="portfolio-btn" aria-label="Like"><i class="fas fa-heart" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
@@ -547,8 +548,8 @@
                                 </div>
                             </div>
                             <div class="portfolio-actions">
-                                <button class="portfolio-btn"><i class="fas fa-expand"></i></button>
-                                <button class="portfolio-btn"><i class="fas fa-heart"></i></button>
+                                <button class="portfolio-btn" aria-label="View larger"><i class="fas fa-expand" aria-hidden="true"></i></button>
+                                <button class="portfolio-btn" aria-label="Like"><i class="fas fa-heart" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
@@ -567,8 +568,8 @@
                                 </div>
                             </div>
                             <div class="portfolio-actions">
-                                <button class="portfolio-btn"><i class="fas fa-expand"></i></button>
-                                <button class="portfolio-btn"><i class="fas fa-heart"></i></button>
+                                <button class="portfolio-btn" aria-label="View larger"><i class="fas fa-expand" aria-hidden="true"></i></button>
+                                <button class="portfolio-btn" aria-label="Like"><i class="fas fa-heart" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
@@ -586,8 +587,8 @@
                                 </div>
                             </div>
                             <div class="portfolio-actions">
-                                <button class="portfolio-btn"><i class="fas fa-expand"></i></button>
-                                <button class="portfolio-btn"><i class="fas fa-heart"></i></button>
+                                <button class="portfolio-btn" aria-label="View larger"><i class="fas fa-expand" aria-hidden="true"></i></button>
+                                <button class="portfolio-btn" aria-label="Like"><i class="fas fa-heart" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
@@ -605,8 +606,8 @@
                                 </div>
                             </div>
                             <div class="portfolio-actions">
-                                <button class="portfolio-btn"><i class="fas fa-play"></i></button>
-                                <button class="portfolio-btn"><i class="fas fa-heart"></i></button>
+                                <button class="portfolio-btn" aria-label="Play video"><i class="fas fa-play" aria-hidden="true"></i></button>
+                                <button class="portfolio-btn" aria-label="Like"><i class="fas fa-heart" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
@@ -633,8 +634,8 @@
                                 </div>
                             </div>
                             <div class="portfolio-actions">
-                                <button class="portfolio-btn"><i class="fas fa-expand"></i></button>
-                                <button class="portfolio-btn"><i class="fas fa-heart"></i></button>
+                                <button class="portfolio-btn" aria-label="View larger"><i class="fas fa-expand" aria-hidden="true"></i></button>
+                                <button class="portfolio-btn" aria-label="Like"><i class="fas fa-heart" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
@@ -652,8 +653,8 @@
                                 </div>
                             </div>
                             <div class="portfolio-actions">
-                                <button class="portfolio-btn"><i class="fas fa-expand"></i></button>
-                                <button class="portfolio-btn"><i class="fas fa-heart"></i></button>
+                                <button class="portfolio-btn" aria-label="View larger"><i class="fas fa-expand" aria-hidden="true"></i></button>
+                                <button class="portfolio-btn" aria-label="Like"><i class="fas fa-heart" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
@@ -671,8 +672,8 @@
                                 </div>
                             </div>
                             <div class="portfolio-actions">
-                                <button class="portfolio-btn"><i class="fas fa-expand"></i></button>
-                                <button class="portfolio-btn"><i class="fas fa-heart"></i></button>
+                                <button class="portfolio-btn" aria-label="View larger"><i class="fas fa-expand" aria-hidden="true"></i></button>
+                                <button class="portfolio-btn" aria-label="Like"><i class="fas fa-heart" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
@@ -690,8 +691,8 @@
                                 </div>
                             </div>
                             <div class="portfolio-actions">
-                                <button class="portfolio-btn"><i class="fas fa-expand"></i></button>
-                                <button class="portfolio-btn"><i class="fas fa-heart"></i></button>
+                                <button class="portfolio-btn" aria-label="View larger"><i class="fas fa-expand" aria-hidden="true"></i></button>
+                                <button class="portfolio-btn" aria-label="Like"><i class="fas fa-heart" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
@@ -709,8 +710,8 @@
                                 </div>
                             </div>
                             <div class="portfolio-actions">
-                                <button class="portfolio-btn"><i class="fas fa-expand"></i></button>
-                                <button class="portfolio-btn"><i class="fas fa-heart"></i></button>
+                                <button class="portfolio-btn" aria-label="View larger"><i class="fas fa-expand" aria-hidden="true"></i></button>
+                                <button class="portfolio-btn" aria-label="Like"><i class="fas fa-heart" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
@@ -728,8 +729,8 @@
                                 </div>
                             </div>
                             <div class="portfolio-actions">
-                                <button class="portfolio-btn"><i class="fas fa-expand"></i></button>
-                                <button class="portfolio-btn"><i class="fas fa-heart"></i></button>
+                                <button class="portfolio-btn" aria-label="View larger"><i class="fas fa-expand" aria-hidden="true"></i></button>
+                                <button class="portfolio-btn" aria-label="Like"><i class="fas fa-heart" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
@@ -747,8 +748,8 @@
                                 </div>
                             </div>
                             <div class="portfolio-actions">
-                                <button class="portfolio-btn"><i class="fas fa-expand"></i></button>
-                                <button class="portfolio-btn"><i class="fas fa-heart"></i></button>
+                                <button class="portfolio-btn" aria-label="View larger"><i class="fas fa-expand" aria-hidden="true"></i></button>
+                                <button class="portfolio-btn" aria-label="Like"><i class="fas fa-heart" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
@@ -766,8 +767,8 @@
                                 </div>
                             </div>
                             <div class="portfolio-actions">
-                                <button class="portfolio-btn"><i class="fas fa-expand"></i></button>
-                                <button class="portfolio-btn"><i class="fas fa-heart"></i></button>
+                                <button class="portfolio-btn" aria-label="View larger"><i class="fas fa-expand" aria-hidden="true"></i></button>
+                                <button class="portfolio-btn" aria-label="Like"><i class="fas fa-heart" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
@@ -785,8 +786,8 @@
                                 </div>
                             </div>
                             <div class="portfolio-actions">
-                                <button class="portfolio-btn"><i class="fas fa-expand"></i></button>
-                                <button class="portfolio-btn"><i class="fas fa-heart"></i></button>
+                                <button class="portfolio-btn" aria-label="View larger"><i class="fas fa-expand" aria-hidden="true"></i></button>
+                                <button class="portfolio-btn" aria-label="Like"><i class="fas fa-heart" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
@@ -804,8 +805,8 @@
                                 </div>
                             </div>
                             <div class="portfolio-actions">
-                                <button class="portfolio-btn"><i class="fas fa-expand"></i></button>
-                                <button class="portfolio-btn"><i class="fas fa-heart"></i></button>
+                                <button class="portfolio-btn" aria-label="View larger"><i class="fas fa-expand" aria-hidden="true"></i></button>
+                                <button class="portfolio-btn" aria-label="Like"><i class="fas fa-heart" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
@@ -823,8 +824,8 @@
                                 </div>
                             </div>
                             <div class="portfolio-actions">
-                                <button class="portfolio-btn"><i class="fas fa-expand"></i></button>
-                                <button class="portfolio-btn"><i class="fas fa-heart"></i></button>
+                                <button class="portfolio-btn" aria-label="View larger"><i class="fas fa-expand" aria-hidden="true"></i></button>
+                                <button class="portfolio-btn" aria-label="Like"><i class="fas fa-heart" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
@@ -842,8 +843,8 @@
                                 </div>
                             </div>
                             <div class="portfolio-actions">
-                                <button class="portfolio-btn"><i class="fas fa-expand"></i></button>
-                                <button class="portfolio-btn"><i class="fas fa-heart"></i></button>
+                                <button class="portfolio-btn" aria-label="View larger"><i class="fas fa-expand" aria-hidden="true"></i></button>
+                                <button class="portfolio-btn" aria-label="Like"><i class="fas fa-heart" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
@@ -861,8 +862,8 @@
                                 </div>
                             </div>
                             <div class="portfolio-actions">
-                                <button class="portfolio-btn"><i class="fas fa-expand"></i></button>
-                                <button class="portfolio-btn"><i class="fas fa-heart"></i></button>
+                                <button class="portfolio-btn" aria-label="View larger"><i class="fas fa-expand" aria-hidden="true"></i></button>
+                                <button class="portfolio-btn" aria-label="Like"><i class="fas fa-heart" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
@@ -880,8 +881,8 @@
                                 </div>
                             </div>
                             <div class="portfolio-actions">
-                                <button class="portfolio-btn"><i class="fas fa-expand"></i></button>
-                                <button class="portfolio-btn"><i class="fas fa-heart"></i></button>
+                                <button class="portfolio-btn" aria-label="View larger"><i class="fas fa-expand" aria-hidden="true"></i></button>
+                                <button class="portfolio-btn" aria-label="Like"><i class="fas fa-heart" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
@@ -1038,7 +1039,7 @@
         Calendly.initBadgeWidget({
           url: 'https://calendly.com/shaheersaud2004',
           text: 'Schedule time with me',
-          color: '#6366f1',
+          color: '#6D5DF5',
           textColor: '#ffffff',
           branding: true
         });
