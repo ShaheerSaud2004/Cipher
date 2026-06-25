@@ -51,7 +51,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 * { margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 92px; }
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -111,6 +111,20 @@ input, textarea, select { font-family: inherit; }
 }
 .section > .container > h2 + .service-grid,
 .section > .container > h2 + .project-showcase { margin-top: 48px; }
+
+/* Reusable, scannable section header (eyebrow + title + subtitle) */
+.section-head { text-align: center; max-width: 720px; margin: 0 auto 52px; }
+.eyebrow {
+  display: inline-block;
+  font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--brand-700);
+  background: var(--grad-soft);
+  border: 1px solid rgba(37,99,235,.18);
+  padding: 7px 16px; border-radius: var(--pill);
+  margin-bottom: 18px;
+}
+.section-head h2 { font-size: clamp(1.9rem, 3.6vw, 2.7rem); margin-bottom: 14px; }
+.section-sub { font-size: 1.06rem; color: var(--text); }
 
 /* ---------- Buttons ---------- */
 .btn,
@@ -221,7 +235,8 @@ header {
 }
 .brand-tagline { font-size: .74rem; color: var(--muted); font-weight: 500; margin-top: 3px; letter-spacing: .01em; }
 
-.nav-bar { display: flex; }
+.nav-bar { display: flex; margin-left: auto; }
+.header-cta { padding: 11px 22px; font-size: .92rem; }
 .nav-list { display: flex; align-items: center; gap: 4px; }
 .nav-link {
   position: relative;
@@ -536,8 +551,10 @@ header {
 .team-header-section { text-align: center; max-width: 720px; margin: 0 auto 54px; }
 .photo-video-team-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 28px;
+  max-width: 540px;
+  margin: 0 auto;
 }
 .team-member-card {
   background: #fff;
@@ -1005,6 +1022,7 @@ header {
 
 @media (max-width: 860px) {
   .nav-bar { display: none; }
+  .header-cta { display: none; }
   .hamburger { display: flex; }
   .photo-video-team-grid { grid-template-columns: 1fr; }
   .benefits-grid { grid-template-columns: 1fr 1fr; }
