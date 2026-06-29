@@ -1,39 +1,35 @@
+# Cipher Consulting — robots.txt
+
 User-agent: *
 Allow: /
+Allow: /images/
+Disallow: /cipher-marketing/
+Crawl-delay: 1
 
-# Sitemap location
-Sitemap: https://cipherconsulting.net/sitemap.xml
-
-# Allow all search engines to crawl the site
 User-agent: Googlebot
 Allow: /
+Disallow: /cipher-marketing/
 
 User-agent: Bingbot
 Allow: /
+Disallow: /cipher-marketing/
 
 User-agent: Slurp
 Allow: /
+Disallow: /cipher-marketing/
 
 User-agent: DuckDuckBot
 Allow: /
+Disallow: /cipher-marketing/
 
 User-agent: Baiduspider
 Allow: /
+Disallow: /cipher-marketing/
 
 User-agent: YandexBot
 Allow: /
+Disallow: /cipher-marketing/
 
-# Crawl delay (optional - helps prevent server overload)
-Crawl-delay: 1
-
-# Disallow crawling of certain file types (if any)
-# Disallow: *.pdf$
-# Disallow: *.doc$
-# Disallow: *.docx$
-
-# Allow crawling of images for better SEO
-Allow: /images/
-Allow: /cipher-marketing/images/
-
-# Host declaration (helps with canonical URLs)
+# Sitemap & canonical host
+Sitemap: https://cipherconsulting.net/sitemap.xml
 Host: https://cipherconsulting.net
