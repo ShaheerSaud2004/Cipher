@@ -13,12 +13,6 @@
     </url>
 
     <!-- Marketing Page -->
-    <url>
-        <loc>https://cipherconsulting.net/cipher-marketing/</loc>
-        <lastmod>2026-06-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
 
     <!-- Main Sections (anchors) -->
     <url>
@@ -36,7 +30,7 @@
     </url>
 
     <url>
-        <loc>https://cipherconsulting.net/#past-work</loc>
+        <loc>https://cipherconsulting.net/#work</loc>
         <lastmod>2026-06-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
